@@ -2590,7 +2590,7 @@ msgid "e.g. You may want to exclude 'fontawesome' or other libraries from the in
 msgstr ""
 
 #: src/templates/minify/css-settings-tab.php:101
-msgid "e.g.: /wp-content/themes/my-theme/css/custom-font.css"
+msgid "e.g.: /wp-content/themes/beetroot-wp-test/css/custom-font.css"
 msgstr ""
 
 #: src/templates/minify/css-settings-tab.php:107

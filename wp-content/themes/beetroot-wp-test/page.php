@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package my-theme
+ * @package beetroot-wp-test
  */
 
 get_header();

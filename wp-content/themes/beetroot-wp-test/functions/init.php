@@ -102,7 +102,7 @@ add_action( 'after_setup_theme', 'disable_json_api' );
 function translations() {
 	// Load the text domain and translations
 	$lang_dir = get_stylesheet_directory() . '/languages';
-	load_theme_textdomain( 'my-theme', $lang_dir );
+	load_theme_textdomain( 'beetroot-wp-test', $lang_dir );
 }
 
 add_action( 'after_setup_theme', 'translations' );

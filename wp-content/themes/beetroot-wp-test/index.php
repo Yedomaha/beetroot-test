@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package my-theme
+ * @package beetroot-wp-test
  */
 
 get_header();

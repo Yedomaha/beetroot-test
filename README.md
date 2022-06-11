@@ -19,15 +19,15 @@ Template for develop Wordpress theme with ACF Pro plugins.
     
 ## Start develop with gulp browser sync.
 
-1. go to path wp-content/themes/my-theme;
-2. change theme directory name (my-theme -> custom name); 
+1. go to path wp-content/themes/beetroot-wp-test;
+2. change theme directory name (beetroot-wp-test -> custom name); 
 3. check npm and node js installed;
 4. change package.json for your project;
 5. npm i;
 6. change proxy in path gulp/tasks/server.js;
 7. import sass, js files to directory site-origin-sources - default files path (site-origin-sources/js , site-origin-sources/sass) you can change this path in gulp/config.js;
-8. move img, fonts, media or another not build files to my-theme/assets;
-9. change .gitignore (wp-content/themes/my-theme/assets/js, wp-content/themes/my-theme/assets/css) for custom theme name;
+8. move img, fonts, media or another not build files to beetroot-wp-test/assets;
+9. change .gitignore (wp-content/themes/beetroot-wp-test/assets/js, wp-content/themes/beetroot-wp-test/assets/css) for custom theme name;
 10. commands:
 * `gulp` - run dev-server;
 * `gulp build` - build project to production;

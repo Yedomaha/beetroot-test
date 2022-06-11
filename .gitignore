@@ -10,8 +10,8 @@ wp-content/wflogs/config-transient.php
 wp-content/backups-dup-pro/
 wp-content/uploads/
 wp-content/updraft/
-wp-content/themes/my-theme/dist
-wp-content/themes/my-theme/src/sass/generated
+wp-content/themes/beetroot-wp-test/dist
+wp-content/themes/beetroot-wp-test/src/sass/generated
 
 # ignore node dependency directories
 node_modules/

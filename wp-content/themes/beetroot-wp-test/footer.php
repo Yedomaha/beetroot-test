@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package my-theme
+ * @package beetroot-wp-test
  */
 
 ?>

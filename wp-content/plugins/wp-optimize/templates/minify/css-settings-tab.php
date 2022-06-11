@@ -98,7 +98,7 @@
 					cols="50"
 					id="async_css"
 					class="large-text code"
-					placeholder="<?php esc_attr_e('e.g.: /wp-content/themes/my-theme/css/custom-font.css', 'wp-optimize'); ?>"
+					placeholder="<?php esc_attr_e('e.g.: /wp-content/themes/beetroot-wp-test/css/custom-font.css', 'wp-optimize'); ?>"
 				><?php echo esc_textarea($wpo_minify_options['async_css']); ?></textarea>
 			</fieldset>
 		</div>
