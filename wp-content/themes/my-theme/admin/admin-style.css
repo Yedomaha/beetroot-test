@@ -1,0 +1,48 @@
+/**
+Admin styles
+*/
+
+.menu-item-bar .menu-item-handle {
+    max-width: 100%;
+}
+
+.menu-item-settings {
+    width: 100%;
+    max-width: 97%;
+}
+
+#poststuff #submitdiv .button[type=submit] {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    width: 100px;
+    z-index: 999;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#poststuff #submitdiv #save-post {
+    bottom: 50px;
+}
+
+/**
+Duplicator PRO
+ */
+.update-nag.dpro-admin-notice {
+    display: none;
+}
+
+/**
+ACF styles
+Used for acf fields
+ */
+
+.hide-field {
+    display: none;
+}
+
+.disabled-field {
+    pointer-events: none;
+    opacity: .6;
+}

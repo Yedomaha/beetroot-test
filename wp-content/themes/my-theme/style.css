@@ -1,0 +1,100 @@
+/*!
+Theme Name: My Theme
+Theme URI: 
+Author: Ovrutskyy Vladyslav
+Author URI: 
+Description: Wordpress template
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: my-theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+My Theme is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+ */
+
+.cms-editor strong {
+    font-weight: 700
+}
+
+.cms-editor .btn, .cms-editor .button {
+    text-decoration: none
+}
+
+.cms-editor blockquote {
+    margin: 1.5em 10px;
+    padding: .5em 10px;
+    quotes: "“" "”" "‘" "’"
+}
+
+.cms-editor blockquote:before {
+    content: open-quote;
+    font-size: 4em;
+    line-height: .1em;
+    margin-right: .25em;
+    vertical-align: -.4em
+}
+
+.cms-editor blockquote p {
+    display: inline
+}
+
+.cms-editor hr {
+    border: 0;
+    border-bottom: 1px solid
+}
+
+.cms-editor em {
+    font-style: italic
+}
+
+.cms-editor ol, .cms-editor ul {
+    margin: 15px 15px 0;
+    text-align: left
+}
+
+.cms-editor ul {
+    list-style-type: disc
+}
+
+.cms-editor ol {
+    list-style-type: decimal
+}
+
+
+/*All pages template*/
+.pages-list {
+    display: flex;
+    padding: 155px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pages-list ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.pages-list ul:last-child {
+    margin-bottom: 0px;
+}
+.pages-list ul h3 {
+    display: block;
+    text-align: center;
+    font-size: 28px;
+}
+.pages-list ul a {
+    display: block;
+    padding: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+.pages-list ul a:hover {
+    text-decoration: underline;
+}

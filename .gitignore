@@ -1,0 +1,46 @@
+# ignore everything in the root except the "wp-content" directory.
+
+wp-config.php
+/.htaccess
+
+wp-snapshots/
+wp-content/wflogs/config-livewaf.php
+wp-content/wflogs/config-synced.php
+wp-content/wflogs/config-transient.php
+wp-content/backups-dup-pro/
+wp-content/uploads/
+wp-content/updraft/
+wp-content/themes/my-theme/dist
+wp-content/themes/my-theme/src/sass/generated
+
+# ignore node dependency directories
+node_modules/
+psd
+
+# ignore log files and databases
+*.log
+.DS_Store
+package-lock.json
+
+
+
+# OS or Editor folders
+.DS_Store
+._*
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+.idea
+
+# Folders to ignore
+.sass-cache
+.tmp
+_tmp
+bower_components
+_sprite.scss

@@ -1,0 +1,8 @@
+i.mce-i-shortcodeIcon {
+    font-family: 'dashicons';
+}
+
+i.mce-i-shortcodeIcon:before {
+    content: "\f538";
+    font-size: 20px;
+}
