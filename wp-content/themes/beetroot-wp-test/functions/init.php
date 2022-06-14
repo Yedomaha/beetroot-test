@@ -35,9 +35,9 @@ if ( ! function_exists( 'my_setup' ) ) :
 		}
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'header-menu' => 'Primary',
-		) );
+//		register_nav_menus( array(
+//			'header-menu' => 'Primary',
+//		) );
 
 		//Register Sidebar
 //        if (function_exists('register_sidebar')) {

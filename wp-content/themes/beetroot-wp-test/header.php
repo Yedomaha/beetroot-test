@@ -51,4 +51,4 @@ $pageClass           = $GLOBALS['pageName'];
 
 <body <?php body_class($pageClass); ?> data-page-name="<?php echo $GLOBALS['pageName']; ?>">
 <?php echo !empty($google_tag_manager_body) ? $google_tag_manager_body : false; ?>
-<?php get_template_part('template-parts/blocks/header'); ?>
+<?php get_template_part('template-parts/components/header-inner'); ?>

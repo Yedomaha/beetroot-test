@@ -1,11 +1,39 @@
 html, body {
   font-family: $font-1;
-  font-weight: 400;
+  font-size: 32px;
+  font-weight: 300;
   color: $color-1;
+
+
+  @media (max-width: $xxxl) {
+    font-size: 18px;
+  }
+
+  @media (max-width: $xl) {
+    font-size: 17px;
+  }
+
+  @media (max-width: $lg) {
+    font-size: 16px;
+  }
+
+  @media (max-width: $md) {
+    font-size: 15px;
+  }
+}
+
+main{
+  margin-top: 160px;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+  @media (max-width: $xxxl) {
+    margin-top: 90px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 400;
 }
 
 img, video {
@@ -14,7 +42,7 @@ img, video {
 }
 
 button, a, [class*=button], [class*=btn], [class*=link] {
-  cursor: pointer;
+  //cursor: pointer;
 }
 
 .title {

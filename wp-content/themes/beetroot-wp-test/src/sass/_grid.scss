@@ -1,18 +1,21 @@
 .container {
   width: 100%;
   margin: 0 auto;
-  max-width: 1345px;
-  padding: 0 100px;
+  max-width: 2340px;
+
+  @media (max-width: $xxxl) {
+    max-width: 1200px;
+  }
 
   @media (max-width: $lg) {
-    padding: 0 60px;
+
   }
 
   @media (max-width: $md) {
-    padding: 0 45px;
+
   }
 
   @media (max-width: $sm) {
-    padding: 0 30px;
+
   }
 }

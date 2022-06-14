@@ -1,0 +1,130 @@
+.header {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  background-color: $color-2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  &__inner {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    @media (max-width: $xxxl) {
+      height: 90px;
+    }
+  }
+  &__logo {
+    margin-right: 49px;
+    position: relative;
+    &:last-child {
+      margin-right: 0;
+    }
+    img {
+      max-width: 283px;
+      max-height: 102px;
+    }
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__lang-switcher {
+    position: relative;
+    height: 50px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    &:hover ul {
+      opacity: 1;
+      pointer-events: all;
+    }
+    &:hover .header__current-lang:before {
+      transform: translateY(-65%) rotate(-45deg);
+    }
+    a{
+      &:hover{
+        color: $color-3;
+      }
+    }
+    ul {
+      padding-top: calc((160px - 50px) / 2);
+      padding-bottom: 10px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 100%;
+      opacity: 0;
+      pointer-events: none;
+      background-color: $color-2;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      transition: opacity .3s ease-in-out;
+      @media (max-width: $xxxl) {
+        padding-top: calc((90px - 50px) / 2);
+      }
+    }
+    li{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      padding: 0 20px;
+    }
+  }
+  &__current-lang {
+    cursor: pointer;
+    position: relative;
+    padding-right: 38px;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-10%) rotate(135deg);
+      width: 18px;
+      height: 18px;
+      border-left: 1px solid $color-1;
+      border-bottom: 1px solid $color-1;
+      transition: transform .3s ease-in-out;
+    }
+  }
+  &__nav-wrap {
+    margin-left: auto;
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        letter-spacing: 1.88px;
+        margin-right: 39px;
+        a {
+          transition: color .3s ease-in-out, background-color .3s ease-in-out;
+          &:hover {
+            color: $color-3;
+          }
+        }
+        &.special {
+          a {
+            display: inline-block;
+            padding: 30px 38px;
+            color: $color-3;
+            border: 2px solid $color-3;
+            border-radius: 100px;
+            &:hover {
+              color: $color-2;
+              background-color: $color-3;
+            }
+          }
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
