@@ -1,0 +1,46 @@
+.footer {
+  padding: 202px 0 155px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: $color-1;
+  color: rgba(254, 254, 254, .6);
+  &__inner {
+    display: flex;
+  }
+  &__col {
+    &--nav{
+      width: 50%;
+      max-width: 1200px;
+    }
+  }
+  &__nav-header {
+    padding-bottom: 51px;
+  }
+  &__nav-header, &__nav-body {
+    display: flex;
+  }
+  &__nav-col {
+    padding-right: 40px;
+    width: 33.3%;
+  }
+  &__nav-title {
+    font-size: 20px;
+    &--mobile {
+      display: none;
+    }
+  }
+  &__nav {
+    ul {
+
+    }
+    li {
+      margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

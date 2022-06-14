@@ -13,7 +13,7 @@
 
 <?php wp_footer(); ?>
 
-<footer></footer>
+<?php get_template_part('template-parts/components/footer-inner') ?>
 
 </body>
 </html>
