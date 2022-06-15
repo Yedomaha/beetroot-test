@@ -5,7 +5,7 @@ $navigation_columns = $footer['navigation_columns'];
 $socials            = $footer['socials'];
 ?>
 
-<footer class="footer">
+<footer id="footer" class="footer">
     <div class="container">
         <div class="footer__inner">
 
