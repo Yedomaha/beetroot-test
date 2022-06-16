@@ -65,7 +65,45 @@ $socials            = $footer['socials'];
 
                 </div>
             </div>
+            <div class="footer__col footer__col--socials">
 
+				<?php if ( $socials ): ?>
+
+                    <ul class="socials-list footer__socials-list">
+
+
+						<?php foreach ( $socials as $item ):
+							$socials_link = $item['link'];
+							$socials_icon = $item['icon'];
+							?>
+
+                            <li class="socials-list__item">
+                                <img class="socials-list__icon" <?php echo getImageAttributesById( $socials_icon['id'], 200 ); ?>>
+                                <a href="<?php echo $socials_link['url'] ?>"
+                                   target="<?php echo $socials_link['target'] ?>"></a>
+                            </li>
+
+						<?php endforeach; ?>
+
+                    </ul>
+
+				<?php endif; ?>
+
+                <div class="subscribe footer__subscribe">
+                    <h6 class="subscribe__title">subscribe to news</h6>
+                    <form class="subscribe__form"
+                          action="https://beetroot.us12.list-manage.com/subscribe/post-json?u=566efbac8b30750fe9c9d744a&amp;id=04557f958e&amp;c=callback"
+                          method="post" target="_blank">
+                        <input class="subscribe__form-input" type="email" name="EMAIL" placeholder="Enter Email Adress"
+                               required="">
+                        <input class="subscribe__form-submit" type="submit" value="">
+                        <div class="subscribe__form-message subscribe__form-message--success">Thank you for
+                            subscribing!
+                        </div>
+                        <div class="subscribe__form-message subscribe__form-message--error">Something went wrong</div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </footer>

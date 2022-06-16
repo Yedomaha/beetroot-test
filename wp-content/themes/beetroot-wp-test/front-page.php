@@ -13,8 +13,6 @@
  */
 get_header(); ?>
 
-    <main id="main">
-
         <section class="job-openings">
             <div class="container">
                 <div class="job-openings__inner">
@@ -122,7 +120,29 @@ get_header(); ?>
 											<?php get_template_part( 'template-parts/inline-svg/location-svg' ) ?>
                                             <div class="cpt-item__locations-list">Kyiv</div>
                                         </div>
-                                        <div class="cpt-item__tags"></div>
+                                        <ul class="cpt-item__tags-list">
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">PHP</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </article>
@@ -149,7 +169,29 @@ get_header(); ?>
 					                        <?php get_template_part( 'template-parts/inline-svg/location-svg' ) ?>
                                             <div class="cpt-item__locations-list">Kyiv</div>
                                         </div>
-                                        <div class="cpt-item__tags"></div>
+                                        <ul class="cpt-item__tags-list">
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">PHP</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </article>
@@ -176,7 +218,29 @@ get_header(); ?>
 					                        <?php get_template_part( 'template-parts/inline-svg/location-svg' ) ?>
                                             <div class="cpt-item__locations-list">Kyiv</div>
                                         </div>
-                                        <div class="cpt-item__tags"></div>
+                                        <ul class="cpt-item__tags-list">
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">PHP</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </article>
@@ -203,7 +267,29 @@ get_header(); ?>
 					                        <?php get_template_part( 'template-parts/inline-svg/location-svg' ) ?>
                                             <div class="cpt-item__locations-list">Kyiv</div>
                                         </div>
-                                        <div class="cpt-item__tags"></div>
+                                        <ul class="cpt-item__tags-list">
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">PHP</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </article>
@@ -230,7 +316,29 @@ get_header(); ?>
 					                        <?php get_template_part( 'template-parts/inline-svg/location-svg' ) ?>
                                             <div class="cpt-item__locations-list">Kyiv</div>
                                         </div>
-                                        <div class="cpt-item__tags"></div>
+                                        <ul class="cpt-item__tags-list">
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">PHP</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </article>
@@ -248,7 +356,5 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-
-    </main>
 
 <?php get_footer(); ?>
