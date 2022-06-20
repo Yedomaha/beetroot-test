@@ -14,7 +14,7 @@ require_once ('functions/acf.php');
 //require_once ('functions/acf_content_builder_previews.php');
 require_once ('functions/acf-blocks.php');
 //require_once ('functions/pagination.php');
-//require_once ('functions/contact-form7.php');
+require_once ('functions/contact-form7.php');
 //require_once ('functions/yoast-seo.php');
 require_once ('functions/shortcodes/shortcodes.php');
 //require_once ('functions/resolution_on_upload.php');

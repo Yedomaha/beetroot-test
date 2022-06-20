@@ -1,4 +1,4 @@
-.cta-block{
+.pre-footer{
   position: relative;
   padding: 129px 0;
   background-color: $color-2;
@@ -14,6 +14,12 @@
     transform: skewY(-1deg);
     transform-origin: 100% 100%;
   }
+  &--gray{
+    background-color: $color-4;
+    &:before{
+      background-color: $color-4;
+    }
+  }
   &__inner{
     display: flex;
     flex-wrap: wrap;
@@ -28,16 +34,5 @@
   }
   &__cta{
     margin: 0 30px;
-    font-size: 30px;
-    display: inline-block;
-    padding: 28px 35px;
-    color: $color-3;
-    border: 2px solid $color-3;
-    border-radius: 100px;
-    transition: color .3s ease-in-out, background-color .3s ease-in-out;
-    &:hover {
-      color: $color-2;
-      background-color: $color-3;
-    }
   }
 }

@@ -242,3 +242,21 @@ function get_current_year() {
 	echo date( 'Y' );
 
 }
+
+function get_terms_string( $terms, $separator ) {
+//	if(!isset($terms) || empty($terms) || !is_array($terms))
+//		return;
+
+	$terms        = array_values( $terms );
+	$terms_string = '';
+	for ( $i = 0; $i < count( $terms ); $i ++ ) {
+		// Each array item is an object. Display its 'name' value.
+		$terms_string .= $terms[ $i ]->name;
+		// If there is more than one term, comma separate them.
+		if ( $i < count( $terms ) - 1 ) {
+			$terms_string .= strval($separator);
+		}
+	}
+
+	return $terms_string;
+}

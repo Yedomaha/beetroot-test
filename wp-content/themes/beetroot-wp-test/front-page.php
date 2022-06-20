@@ -348,11 +348,11 @@ get_header(); ?>
             </div>
         </section>
 
-        <section class="cta-block">
+        <section class="pre-footer">
             <div class="container">
-                <div class="cta-block__inner">
-                    <h4 class="cta-block__title">Don’t see a role that fits?</h4>
-                    <a href="" class="cta-block__cta">Contact us</a>
+                <div class="pre-footer__inner">
+                    <h4 class="pre-footer__title">Don’t see a role that fits?</h4>
+                    <a href="" class="pre-footer__cta default-cta">Contact us</a>
                 </div>
             </div>
         </section>

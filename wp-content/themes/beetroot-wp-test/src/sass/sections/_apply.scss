@@ -1,0 +1,60 @@
+.apply {
+  &__inner {
+    padding: 240px 0;
+  }
+  &__title {
+    margin-bottom: 95px;
+    font-size: 90px;
+    line-height: (110/90);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__form-wrap {
+
+  }
+}
+
+.apply-form {
+  input[type='text'],input[type='email'],input[type='tel'], textarea {
+    width: 100%;
+    padding: 36px 0;
+    border-bottom: 2px solid rgba(61, 57, 53, .2);
+  }
+  label{
+    position: relative;
+  }
+  &__row {
+    margin-bottom: 55px;
+    display: flex;
+    justify-content: space-between;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__col {
+    width: 100%;
+    label{
+      width: 100%;
+    }
+    &--2 {
+      width: calc(33.33% - 30px);
+    }
+    &--3 {
+      width: calc(33.33% - 40px);
+    }
+  }
+  &__hidden {
+    display: none;
+  }
+  &__label-inner{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 34px;
+  }
+  &__required{
+    color: $color-3;
+  }
+}

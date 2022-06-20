@@ -2,6 +2,18 @@
 /**
  * Block Name: Editor
  */
-//$textarea = get_field('textarea'); ?>
+$editor = get_field( 'editor' ); ?>
 
-<div style="margin-top: 20px; border: 2px solid red">TEST EDITOR BLOCK!!</div>
+<section class="editor">
+    <div class="container container--sm">
+        <div class="editor__inner">
+
+			<?php if ( ! empty( $editor ) ): ?>
+
+                <div class="text-content editor__content"><?php echo $editor ?></div>
+
+			<?php endif; ?>
+
+        </div>
+    </div>
+</section>

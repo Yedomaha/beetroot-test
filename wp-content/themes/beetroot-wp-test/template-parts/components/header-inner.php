@@ -33,12 +33,13 @@ $header_nav  = $header['navigation'];
 
 						<?php foreach ( $header_nav as $item ):
 							$item_link = $item['link'];
-							$item_modifier = $item['special_item_mode'] ? 'special' : false;
+							$item_modifier = $item['special_item_mode'] ? 'default-cta' : false;
 							?>
 
-                            <li class="<?php echo $item_modifier ?>">
+                            <li>
                                 <a href="<?php echo $item_link['url'] ?>"
-                                   target="<?php echo $item_link['target'] ?>"><?php echo $item_link['title'] ?></a>
+                                   target="<?php echo $item_link['target'] ?>"
+                                   class="<?php echo $item_modifier ?>"><?php echo $item_link['title'] ?></a>
                             </li>
 
 						<?php endforeach; ?>

@@ -1,0 +1,66 @@
+.job-hero{
+  background-color: $color-4;
+  &__inner{
+    padding: 339px 0 170px;
+  }
+  &__title{
+    margin-bottom: 56px;
+    font-size: 120px;
+    font-weight: 300;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__description{
+    margin-bottom: 60px;
+    max-width: 1135px;
+    font-size: 40px;
+    line-height: (60/40);
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__footer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__cta-wrap{
+    margin-right: 119px;
+    margin-bottom: 50px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  &__cities{
+    display: flex;
+    align-items: center;
+    margin-right: 119px;
+    margin-bottom: 50px;
+  }
+  &__technologies-list{
+    display: flex;
+    align-items: center;
+    margin-right: 119px;
+    margin-bottom: 50px;
+    .tags{
+      &__item{
+        margin-right: 23px;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+      &__img{
+        height: 70px;
+      }
+    }
+  }
+  &__logo-wrap{
+    margin-left: auto;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+  }
+  &__logo{
+    height: 54px;
+  }
+}

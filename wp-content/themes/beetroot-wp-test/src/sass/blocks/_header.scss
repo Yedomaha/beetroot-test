@@ -110,17 +110,10 @@
           &:hover {
             color: $color-3;
           }
-        }
-        &.special {
-          a {
-            display: inline-block;
+          &.default-cta {
             padding: 30px 38px;
-            color: $color-3;
-            border: 2px solid $color-3;
-            border-radius: 100px;
             &:hover {
               color: $color-2;
-              background-color: $color-3;
             }
           }
         }

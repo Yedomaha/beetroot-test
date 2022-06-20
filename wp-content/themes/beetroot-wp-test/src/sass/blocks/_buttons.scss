@@ -1,0 +1,23 @@
+.default-cta{
+  font-size: 30px;
+  display: inline-block;
+  padding: 28px 35px;
+  color: $color-3;
+  background-color: $color-2;
+  border: 2px solid $color-3;
+  border-radius: 100px;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+  &:hover {
+    color: $color-2;
+    background-color: $color-3;
+  }
+  &--red{
+    color: $color-2;
+    background-color: $color-3;
+    &:hover {
+      color: $color-3;
+      background-color: $color-2;
+      border: 2px solid $color-3;
+    }
+  }
+}
