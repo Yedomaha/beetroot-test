@@ -1,4 +1,8 @@
+import applyForm from './components/cf7';
+
 export default () => {
+
+    applyForm();
 
     setMarginBottomToMain();
     window.addEventListener("resize", function() {

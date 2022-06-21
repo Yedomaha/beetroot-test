@@ -86,50 +86,86 @@ $job_technologies = get_the_terms( $post->ID, 'job_technologies' );
 
 				<?php echo do_shortcode( '[contact-form-7 id="485" title="Apply for a job"]' ); ?>
 
+				<?php $show = false;
+				if ( $show ): ?>
 
-                <div class="apply-form__row">
-                    <div class="apply-form__col apply-form__col--3">
-                        <label><span class="apply-form__label-inner">Name<span class="apply-form__required"> *</span></span>
-                            [text* your-name]
-                        </label>
+                    <div class="apply-form__row">
+                        <div class="apply-form__col apply-form__col--3">
+                            <label><span class="apply-form__label-inner">Name<span
+                                            class="apply-form__required"> *</span></span>
+                                [text* your-name]
+                            </label>
+                        </div>
+                        <div class="apply-form__col apply-form__col--3">
+                            <label><span class="apply-form__label-inner">Email<span
+                                            class="apply-form__required"> *</span></span>
+                                [email* your-email]
+                            </label>
+                        </div>
+                        <div class="apply-form__col apply-form__col--3">
+                            <label><span class="apply-form__label-inner">Phone<span
+                                            class="apply-form__required"> *</span></span>
+                                [tel* your-tel]
+                            </label>
+                        </div>
                     </div>
-                    <div class="apply-form__col apply-form__col--3">
-                        <label><span class="apply-form__label-inner">Email<span class="apply-form__required"> *</span></span>
-                            [email* your-email]
-                        </label>
-                    </div>
-                    <div class="apply-form__col apply-form__col--3">
-                        <label><span class="apply-form__label-inner">Phone<span class="apply-form__required"> *</span></span>
-                            [tel* your-tel]
-                        </label>
-                    </div>
-                </div>
 
-                <div class="apply-form__row">
-                    <div class="apply-form__col">
-                        <label><span class="apply-form__label-inner">Message</span>
-                            [text your-message]
-                        </label>
+                    <div class="apply-form__row">
+                        <div class="apply-form__col">
+                            <label><span class="apply-form__label-inner">Message</span>
+                                [text your-message]
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="apply-form__row">
-                    <div class="apply-form__col apply-form__col--2">
-                        [file* file-cv filetypes:pdf|doc|docx]
+                    <div class="apply-form__row apply-form__row--files">
+                        <div class="apply-form__col apply-form__col--2">
+                            <div class="apply-form__file-input-wrap">
+                                <div class="apply-form__file-title">CV<span class="apply-form__required"> *</span></div>
+                                <label class="apply-form__file-label">Attach
+                                    [file* file-cv filetypes:pdf|doc|docx]
+                                </label>
+                                <div class="apply-form__file-input-result"></div>
+                            </div>
+                        </div>
+                        <div class="apply-form__col apply-form__col--2">
+                            <div class="apply-form__file-input-wrap">
+                                <div class="apply-form__file-title">Cover Letter<span
+                                            class="apply-form__required"> *</span>
+                                </div>
+                                <label class="apply-form__file-label">Attach
+                                    [file* cover-letter filetypes:pdf|doc|docx]
+                                </label>
+                                <div class="apply-form__file-input-result"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="apply-form__col apply-form__col--2">
-                        [file* cover-letter filetypes:pdf|doc|docx]
+
+                    <div class="apply-form__row apply-form__row--checkboxes">
+                        <div class="apply-form__col">
+                            <div class="apply-form__checkbox">
+                                [checkbox* privacy-policy use_label_element "I agree with Beetroot’s Privacy Policy and
+                                saving
+                                data in compliance with Swedish law."]
+                            </div>
+                        </div>
+
+                        <div class="apply-form__col">
+                            <div class="apply-form__checkbox">
+                                [checkbox* contact-me use_label_element "Contact me with job offers in the future."]
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="apply-form__hidden">
-                    [text job-page-url]
-                </div>
+                    <div class="apply-form__hidden">
+                        [text job-page-url]
+                    </div>
 
-                <div class="apply-form__footer">
-                    [submit class:default-cta class:default-cta--red "Submit"]
-                </div>
+                    <div class="apply-form__footer">
+                        [submit class:default-cta class:default-cta--red "Submit"]
+                    </div>
 
+				<?php endif; ?>
 
             </div>
 
