@@ -6,6 +6,7 @@
   background-color: $color-2;
   border: 2px solid $color-3;
   border-radius: 100px;
+  cursor: pointer;
   transition: color .3s ease-in-out, background-color .3s ease-in-out;
   &:hover {
     color: $color-2;

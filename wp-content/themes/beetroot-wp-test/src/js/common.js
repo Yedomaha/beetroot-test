@@ -1,22 +1,11 @@
-import applyForm from './components/cf7';
+import applicationForm from './components/alication-form';
+import setMarginBottomToMain from './components/footer';
+import jobsFilter from './components/jobs-filter';
 
 export default () => {
 
-    applyForm();
-
     setMarginBottomToMain();
-    window.addEventListener("resize", function() {
-        setMarginBottomToMain();
-    });
+    applicationForm();
+    jobsFilter();
 
-    function setMarginBottomToMain() {
-        console.log('test');
-        const main = document.getElementById('main');
-        const footer = document.getElementById('footer');
-        if (!main || !footer) return;
-        console.log('test 1');
-        let footerHeight = footer.clientHeight;
-        console.log(footerHeight);
-        main.style.cssText = `margin-bottom:${footerHeight}px`;
-    }
 }

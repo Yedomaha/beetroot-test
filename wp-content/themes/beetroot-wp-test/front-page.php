@@ -80,12 +80,23 @@ get_header(); ?>
                                 <span class="tags-list__item-name">iOS</span>
                                 <span class="tags-list__item-count">7</span>
                             </li>
-                            <!--                            <li class="tags-list__item">-->
-                            <!--                                <span class="tags-list__item-name">Android</span>-->
-                            <!--                                <span class="tags-list__item-count">6</span>-->
-                            <!--                            </li>-->
-                            <li data-show-more class="tags-list__item"><?php _e( 'More', 'lang-td' ) ?></li>
-                            <li data-show-less class="tags-list__item active"><?php _e( 'Less', 'lang-td' ) ?></li>
+
+                            <li class="tags-list__item hidden">
+                                <span class="tags-list__item-name">Android</span>
+                                <span class="tags-list__item-count">6</span>
+                            </li>
+                            <li class="tags-list__item hidden">
+                                <span class="tags-list__item-name">Android</span>
+                                <span class="tags-list__item-count">6</span>
+                            </li>
+                            <li class="tags-list__item hidden">
+                                <span class="tags-list__item-name">Android</span>
+                                <span class="tags-list__item-count">6</span>
+                            </li>
+
+                            <li data-show="more" class="tags-list__item"><?php _e( 'More', 'lang-td' ) ?></li>
+                            <li data-show="less" class="tags-list__item active"><?php _e( 'Less', 'lang-td' ) ?></li>
+
                             <li data-view-switch class="tags-list__item tags-list__item--view-switch">
                                 <div data-grid-type="grid"
                                      class="tags-list__grid-type tags-list__grid-type--grid active">
@@ -97,6 +108,14 @@ get_header(); ?>
                             </li>
                         </ul>
                         <div class="job-filter__grid">
+                            <div class="job-filter__header">
+                                <div class="job-filter__header-col">37 openings</div>
+                                <div class="job-filter__header-col">department</div>
+                                <div class="job-filter__header-col">location</div>
+                                <div class="job-filter__header-col">tags</div>
+                                <div class="job-filter__header-col">client</div>
+                            </div>
+
                             <article class="cpt-item">
                                 <div class="cpt-item__inner">
                                     <div class="cpt-item__header">
@@ -113,55 +132,7 @@ get_header(); ?>
                                             part
                                             of a working environment that values trust.</p>
                                     </div>
-                                    <div class="cpt-item__footer">
-                                        <a class="cpt-item__cta"
-                                           href=""><?php _e( 'Details', 'beetroot-wp-test' ) ?></a>
-                                        <div class="cpt-item__locations">
-											<?php get_template_part( 'template-parts/inline-svg/location-svg' ) ?>
-                                            <div class="cpt-item__locations-list">Kyiv</div>
-                                        </div>
-                                        <ul class="cpt-item__tags-list">
-                                            <li class="cpt-item__tags-item">
-                                                <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
-                                                    <span class="cpt-item__tag-info-text">Magento</span>
-                                                    <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
-                                                </div>
-                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
-                                            </li>
-                                            <li class="cpt-item__tags-item">
-                                                <div class="cpt-item__tag-info">
-                                                    <span class="cpt-item__tag-info-text">PHP</span>
-                                                    <div class="cpt-item__tag-info-arrow"></div>
-                                                </div>
-                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
-                                            </li>
-                                            <li class="cpt-item__tags-item">
-                                                <div class="cpt-item__tag-info">
-                                                    <span class="cpt-item__tag-info-text">Magento</span>
-                                                    <div class="cpt-item__tag-info-arrow"></div>
-                                                </div>
-                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="cpt-item">
-                                <div class="cpt-item__inner">
-                                    <div class="cpt-item__header">
-                                        <h2 class="cpt-item__title cpt-item__title--with-logo">
-                                            <a href="">Senior Magento Developer</a>
-                                        </h2>
-                                        <div class="cpt-item__logo-wrap">
-                                            <img src="<?php echo get_template_directory_uri() ?>/dist/img/client-1.png"
-                                                 alt="">
-                                        </div>
-                                    </div>
-                                    <div class="cpt-item__text">
-                                        <p>Work on big e-commerce projects, have influence on making decisions and feel
-                                            part
-                                            of a working environment that values trust.</p>
-                                    </div>
+                                    <div class="cpt-item__department">Quality Assurance</div>
                                     <div class="cpt-item__footer">
                                         <a class="cpt-item__cta"
                                            href=""><?php _e( 'Details', 'beetroot-wp-test' ) ?></a>
@@ -193,6 +164,33 @@ get_header(); ?>
                                             </li>
                                         </ul>
                                     </div>
+                                    <ul class="cpt-item__tags-list cpt-item__tags-list--list-view">
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">PHP</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                    </ul>
+                                    <div class="cpt-item__logo-wrap cpt-item__logo-wrap--list-view">
+                                        <img src="<?php echo get_template_directory_uri() ?>/dist/img/client-1.png"
+                                             alt="">
+                                    </div>
                                 </div>
                             </article>
                             <article class="cpt-item">
@@ -211,6 +209,7 @@ get_header(); ?>
                                             part
                                             of a working environment that values trust.</p>
                                     </div>
+                                    <div class="cpt-item__department">Quality Assurance</div>
                                     <div class="cpt-item__footer">
                                         <a class="cpt-item__cta"
                                            href=""><?php _e( 'Details', 'beetroot-wp-test' ) ?></a>
@@ -242,6 +241,33 @@ get_header(); ?>
                                             </li>
                                         </ul>
                                     </div>
+                                    <ul class="cpt-item__tags-list cpt-item__tags-list--list-view">
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">PHP</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                    </ul>
+                                    <div class="cpt-item__logo-wrap cpt-item__logo-wrap--list-view">
+                                        <img src="<?php echo get_template_directory_uri() ?>/dist/img/client-1.png"
+                                             alt="">
+                                    </div>
                                 </div>
                             </article>
                             <article class="cpt-item">
@@ -260,6 +286,7 @@ get_header(); ?>
                                             part
                                             of a working environment that values trust.</p>
                                     </div>
+                                    <div class="cpt-item__department">Quality Assurance</div>
                                     <div class="cpt-item__footer">
                                         <a class="cpt-item__cta"
                                            href=""><?php _e( 'Details', 'beetroot-wp-test' ) ?></a>
@@ -291,6 +318,33 @@ get_header(); ?>
                                             </li>
                                         </ul>
                                     </div>
+                                    <ul class="cpt-item__tags-list cpt-item__tags-list--list-view">
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">PHP</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                    </ul>
+                                    <div class="cpt-item__logo-wrap cpt-item__logo-wrap--list-view">
+                                        <img src="<?php echo get_template_directory_uri() ?>/dist/img/client-1.png"
+                                             alt="">
+                                    </div>
                                 </div>
                             </article>
                             <article class="cpt-item">
@@ -309,6 +363,7 @@ get_header(); ?>
                                             part
                                             of a working environment that values trust.</p>
                                     </div>
+                                    <div class="cpt-item__department">Quality Assurance</div>
                                     <div class="cpt-item__footer">
                                         <a class="cpt-item__cta"
                                            href=""><?php _e( 'Details', 'beetroot-wp-test' ) ?></a>
@@ -339,6 +394,187 @@ get_header(); ?>
                                                 <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
                                             </li>
                                         </ul>
+                                    </div>
+                                    <ul class="cpt-item__tags-list cpt-item__tags-list--list-view">
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">PHP</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                    </ul>
+                                    <div class="cpt-item__logo-wrap cpt-item__logo-wrap--list-view">
+                                        <img src="<?php echo get_template_directory_uri() ?>/dist/img/client-1.png"
+                                             alt="">
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="cpt-item">
+                                <div class="cpt-item__inner">
+                                    <div class="cpt-item__header">
+                                        <h2 class="cpt-item__title cpt-item__title--with-logo">
+                                            <a href="">Senior Magento Developer</a>
+                                        </h2>
+                                        <div class="cpt-item__logo-wrap">
+                                            <img src="<?php echo get_template_directory_uri() ?>/dist/img/client-1.png"
+                                                 alt="">
+                                        </div>
+                                    </div>
+                                    <div class="cpt-item__text">
+                                        <p>Work on big e-commerce projects, have influence on making decisions and feel
+                                            part
+                                            of a working environment that values trust.</p>
+                                    </div>
+                                    <div class="cpt-item__department">Quality Assurance</div>
+                                    <div class="cpt-item__footer">
+                                        <a class="cpt-item__cta"
+                                           href=""><?php _e( 'Details', 'beetroot-wp-test' ) ?></a>
+                                        <div class="cpt-item__locations">
+					                        <?php get_template_part( 'template-parts/inline-svg/location-svg' ) ?>
+                                            <div class="cpt-item__locations-list">Kyiv</div>
+                                        </div>
+                                        <ul class="cpt-item__tags-list">
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">PHP</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="cpt-item__tags-list cpt-item__tags-list--list-view">
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">PHP</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                    </ul>
+                                    <div class="cpt-item__logo-wrap cpt-item__logo-wrap--list-view">
+                                        <img src="<?php echo get_template_directory_uri() ?>/dist/img/client-1.png"
+                                             alt="">
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="cpt-item">
+                                <div class="cpt-item__inner">
+                                    <div class="cpt-item__header">
+                                        <h2 class="cpt-item__title cpt-item__title--with-logo">
+                                            <a href="">Senior Magento Developer</a>
+                                        </h2>
+                                        <div class="cpt-item__logo-wrap">
+                                            <img src="<?php echo get_template_directory_uri() ?>/dist/img/client-1.png"
+                                                 alt="">
+                                        </div>
+                                    </div>
+                                    <div class="cpt-item__text">
+                                        <p>Work on big e-commerce projects, have influence on making decisions and feel
+                                            part
+                                            of a working environment that values trust.</p>
+                                    </div>
+                                    <div class="cpt-item__department">Quality Assurance</div>
+                                    <div class="cpt-item__footer">
+                                        <a class="cpt-item__cta"
+                                           href=""><?php _e( 'Details', 'beetroot-wp-test' ) ?></a>
+                                        <div class="cpt-item__locations">
+					                        <?php get_template_part( 'template-parts/inline-svg/location-svg' ) ?>
+                                            <div class="cpt-item__locations-list">Kyiv</div>
+                                        </div>
+                                        <ul class="cpt-item__tags-list">
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">PHP</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                            <li class="cpt-item__tags-item">
+                                                <div class="cpt-item__tag-info">
+                                                    <span class="cpt-item__tag-info-text">Magento</span>
+                                                    <div class="cpt-item__tag-info-arrow"></div>
+                                                </div>
+                                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="cpt-item__tags-list cpt-item__tags-list--list-view">
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow" style="border-top-color: rgb(145, 214, 190);"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">PHP</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/php-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                        <li class="cpt-item__tags-item">
+                                            <div class="cpt-item__tag-info">
+                                                <span class="cpt-item__tag-info-text">Magento</span>
+                                                <div class="cpt-item__tag-info-arrow"></div>
+                                            </div>
+                                            <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg" alt="" class="cpt-item__tags-img">
+                                        </li>
+                                    </ul>
+                                    <div class="cpt-item__logo-wrap cpt-item__logo-wrap--list-view">
+                                        <img src="<?php echo get_template_directory_uri() ?>/dist/img/client-1.png"
+                                             alt="">
                                     </div>
                                 </div>
                             </article>

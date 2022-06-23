@@ -86,6 +86,14 @@ $job_technologies = get_the_terms( $post->ID, 'job_technologies' );
 
 				<?php echo do_shortcode( '[contact-form-7 id="485" title="Apply for a job"]' ); ?>
 
+                <div class="apply-form__data apply-form__data--job-info"
+                     data-url="<?php the_permalink() ?>"
+                     data-name="<?php the_title() ?>"></div>
+                <div class="apply-form__data" data-privacy-text>I agree with Beetroot’s <a href="#privacy">Privacy
+                        Policy</a> and saving data in compliance with Swedish law.
+                </div>
+                <div class="apply-form__data" data-contact-text>Contact me with job offers in the future.</div>
+
 				<?php $show = false;
 				if ( $show ): ?>
 
@@ -141,10 +149,34 @@ $job_technologies = get_the_terms( $post->ID, 'job_technologies' );
                         </div>
                     </div>
 
+                    <div class="apply-form__row apply-form__row--files">
+                        <div class="apply-form__col apply-form__col--2">
+                            <div class="apply-form__file-input-wrap">
+                                <div class="apply-form__file-title">CV<span class="apply-form__required"> *</span></div>
+                                <label class="apply-form__file-label">Attach
+                                    [file* file-cv filetypes:pdf|doc|docx]
+                                </label>
+                                <div class="apply-form__file-input-result"></div>
+                            </div>
+                        </div>
+                        <div class="apply-form__col apply-form__col--2">
+                            <div class="apply-form__file-input-wrap">
+                                <div class="apply-form__file-title">Cover Letter<span
+                                            class="apply-form__required"> *</span>
+                                </div>
+                                <label class="apply-form__file-label">Attach
+                                    [file* cover-letter filetypes:pdf|doc|docx]
+                                </label>
+                                <div class="apply-form__file-input-result"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="apply-form__row apply-form__row--checkboxes">
                         <div class="apply-form__col">
                             <div class="apply-form__checkbox">
-                                [checkbox* privacy-policy use_label_element "I agree with Beetroot’s Privacy Policy and
+                                [checkbox* privacy-policy class:privacyCheckbox use_label_element "I agree with
+                                Beetroot’s Privacy Policy and
                                 saving
                                 data in compliance with Swedish law."]
                             </div>
@@ -152,13 +184,17 @@ $job_technologies = get_the_terms( $post->ID, 'job_technologies' );
 
                         <div class="apply-form__col">
                             <div class="apply-form__checkbox">
-                                [checkbox* contact-me use_label_element "Contact me with job offers in the future."]
+                                [checkbox* contact-me class:contactCheckbox use_label_element "Contact me with job
+                                offers in the future."]
                             </div>
                         </div>
                     </div>
 
                     <div class="apply-form__hidden">
-                        [text job-page-url]
+                        [text job-page-title class:applyForAJobTitle]
+                    </div>
+                    <div class="apply-form__hidden">
+                        [text job-page-url class:applyForAJobUrl]
                     </div>
 
                     <div class="apply-form__footer">
@@ -174,11 +210,45 @@ $job_technologies = get_the_terms( $post->ID, 'job_technologies' );
     </div>
 </section>
 
-<section class="pre-footer pre-footer--gray">
+<section class="pre-footer pre-footer--gray pre-footer--share">
     <div class="container container--sm">
         <div class="pre-footer__inner">
             <h4 class="pre-footer__title">Know someone who might be interested?</h4>
-
+            <ul class="pre-footer__share-list">
+                <li class="pre-footer__share-item">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/img/fb-color.svg" alt=""
+                         class="pre-footer__share-icon">
+                    <a href="javascript:void(0)"
+                       onclick="window.open( 'http://www.facebook.com/sharer.php?u=' + window.location.href, 'sharer', 'toolbar=0, status=0');return false;"
+                       title="Facebook">
+                    </a>
+                </li>
+                <li class="pre-footer__share-item">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/img/vk-color.svg" alt=""
+                         class="pre-footer__share-icon">
+                    <a class="btn btn-default icon"
+                       href="javascript:void(0)"
+                       onclick="window.open( 'https://vk.com/share.php?url=' + window.location.href, 'sharer', 'toolbar=0, status=0');return false;"
+                       title="Twitter">
+                    </a>
+                </li>
+                <li class="pre-footer__share-item">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/img/tw-color.svg" alt=""
+                         class="pre-footer__share-icon">
+                    <a href="https://www.addtoany.com/add_to/twitter?linkurl=<?php the_permalink() ?>&linkname=<?php the_title() ?>&linknote="
+                       target="_blank"
+                       title="Twitter">
+                    </a>
+                </li>
+                <li class="pre-footer__share-item">
+                    <img src="<?php echo get_template_directory_uri() ?>/dist/img/in-color.svg" alt=""
+                         class="pre-footer__share-icon">
+                    <a href="javascript:void(0)"
+                       onclick="window.open( 'https://www.linkedin.com/sharing/share-offsite/?url=' + window.location.href, 'sharer', 'toolbar=0, status=0');return false;"
+                       title="Linkedin">
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </section>
