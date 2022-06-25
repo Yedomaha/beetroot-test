@@ -15,7 +15,7 @@ export default () => {
     }
 
     function gridViewSwitchers(section) {
-        const viewSwitchers = section.querySelectorAll('.tags-list__grid-type');
+        const viewSwitchers = section.querySelectorAll('[data-grid-type]');
         const postsGrid = section.querySelector('.job-filter__grid');
         if (!viewSwitchers || viewSwitchers.length === 0 || !postsGrid) return;
 
@@ -42,51 +42,58 @@ export default () => {
     function tagsListLogic(section) {
         const showMoreBtn = section.querySelector(`[data-show='more']`);
         const showLessBtn = section.querySelector(`[data-show='less']`);
-        const tabsList = section.querySelector('.tags-list');
-        const tagsItems = tabsList?.querySelectorAll('.tags-list__item:not([data-view-switch]):not([data-show])');
+
+        const tagsList = section.querySelector('.tags-list');
+        const tagsItems = tagsList?.querySelectorAll('.tags-list__item:not([data-view-switch]):not(.tags-list__item--count-to-show)');
         if (!showMoreBtn || !showLessBtn || !tagsItems || tagsItems.length === 0) return;
 
+        showLess();
+        tagsList.classList.remove('tags-list--disabled');
+
         showMoreBtn.addEventListener('click', () => {
-            showMore(tagsItems);
+            showMore();
         });
 
         showLessBtn.addEventListener('click', () => {
-            showLess(tabsList, tagsItems);
+            showLess();
         });
 
-        function showMore(tagsItems) {
+        function showMore() {
             if (!tagsItems || tagsItems.length === 0) return;
             tagsItems.forEach((item) => {
                 item.classList.remove('hidden');
             });
-            showMoreBtn.classList.add('active');
-            showLessBtn.classList.remove('active');
+            showMoreBtn.closest('li').classList.add('hidden');
+            showLessBtn.closest('li').classList.remove('hidden');
         }
 
-        function showLess(tabsList, tagsItems) {
-            if (!tabsList || !tagsItems || tagsItems.length === 0) return;
-
+        function showLess() {
+            if (!tagsList || !tagsItems || tagsItems.length === 0) return;
             let itemHeight = tagsItems[0].clientHeight;
 
-            for (let i = tagsItems.length - 1; i > 0; i--) {
-                if (tabsList.clientHeight > itemHeight * 2 && !tagsItems[i].classList.contains('active')) {
-                    tagsItems[i].classList.add('hidden');
+            if (tagsList.clientHeight < itemHeight * 2) {
+                showLessBtn.closest('li').classList.add('hidden');
+                showMoreBtn.closest('li').classList.add('hidden');
+            } else {
+                for (let i = tagsItems.length - 1; i > 0; i--) {
+                    if (tagsList.clientHeight > itemHeight * 2) {
+                        tagsItems[i].classList.add('hidden');
+                    }
                 }
+                showLessBtn.closest('li').classList.add('hidden');
+                showMoreBtn.closest('li').classList.remove('hidden');
             }
-
-            showLessBtn.classList.add('active');
-            showMoreBtn.classList.remove('active');
         }
 
     }
 
-    function tagsItemsClick(section){
+    function tagsItemsClick(section) {
         /*temp*/
-        const tagsItems = section.querySelectorAll('.tags-list__item:not([data-view-switch]):not([data-show])');
-        if(!tagsItems || tagsItems.length === 0) return;
+        const tagsItems = section.querySelectorAll('.tags-list__btn:not([data-view-switch]):not([data-show])');
+        if (!tagsItems || tagsItems.length === 0) return;
 
-        tagsItems.forEach((item)=>{
-            item.addEventListener('click',()=>{
+        tagsItems.forEach((item) => {
+            item.addEventListener('click', () => {
                 item.classList.toggle('active');
             });
         })

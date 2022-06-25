@@ -35,6 +35,7 @@
 .job-filter {
   &__search-bar {
   }
+
   &__grid {
     display: flex;
     flex-wrap: wrap;
@@ -80,19 +81,12 @@
 .search-bar {
   display: flex;
   margin-bottom: 60px;
-  border: 2px solid $color-6;
-  background-color: #fafaf8;
-  border-radius: 100px;
   &__input-wrap, &__drop-down-wrap {
     position: relative;
     height: 130px;
-    border-right: 2px solid $color-6;
     font-size: 38px;
     font-weight: 300;
     color: rgba(61, 57, 53, .7);
-    &:last-child {
-      border-right: none;
-    }
   }
   &__input-wrap {
     width: 50%;
@@ -110,6 +104,27 @@
   }
   &__drop-down-wrap {
     width: 25%;
+    position: relative;
+    background-color: #fafaf8;
+    border: 2px solid $color-6;
+    transition: border-color .3s ease-in-out;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    &:last-child{
+      border-radius: 0 100px 100px 0;
+      border-left-color: $color-6;
+      border-right-color: $color-6;
+    }
+    &:hover .search-bar__drop-down{
+      opacity: 1;
+      pointer-events: all;
+    }
+    &:hover .search-bar__drop-down-btn:before{
+      transform: translateY(-50%) rotate(180deg);
+    }
+    &:hover{
+      border-color: $color-3;
+    }
   }
   &__input, &__drop-down-btn {
     width: 100%;
@@ -120,11 +135,13 @@
     padding-left: 136px;
     font-weight: 300;
     font-size: 38px;
-    font-weight: 300;
     color: rgba(61, 57, 53, .7);
-    &::placeholder {
-      //font-size: 38px;
-      //font-weight: 300;
+    background-color: #fafaf8;
+    border: 2px solid $color-6;
+    border-radius: 100px 0 0 100px;
+    transition: border-color .3s ease-in-out;
+    &:focus{
+      border-color: $color-3;
     }
     &:focus::placeholder {
       opacity: 0;
@@ -143,9 +160,79 @@
       background: url("../img/arrow-down.svg") no-repeat center/contain;
       position: absolute;
       right: 50px;
-      top: 50%;
+      top: calc(50% - 5px);
       transform: translateY(-50%);
+      transition: transform .3s ease-in-out;
     }
+  }
+  &__drop-down{
+    opacity: 0;
+    pointer-events: none;
+    min-width: 100%;
+    position: absolute;
+    top: calc(100% + 20px);
+    right: 0;
+    display: flex;
+    padding: 45px 50px;
+    background: $color-2;
+    border-radius: 20px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0 , 0.07);
+    transition: opacity .3s ease-in-out;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: 30px;
+      background: transparent;
+    }
+  }
+  &__drop-down-col{
+    width: 50%;
+    min-width: 420px;
+    &:first-child{
+      padding-right: 40px;
+    }
+    &:last-child{
+      padding-left: 40px;
+    }
+    .search-bar__drop-down--one-col &{
+      width: 100%;
+      padding: 0;
+    }
+  }
+  &__drop-down-title{
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $color-3;
+  }
+  &__drop-down-list{
+    margin-bottom: 20px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__drop-down-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__counter{
+    font-size: 28px;
+  }
+  &__change-button-wrap{
+    font-size: 22px;
+  }
+  &__change-all{
+    font-size: 22px;
   }
 }
 
@@ -155,39 +242,44 @@
   flex-wrap: wrap;
   font-size: 28px;
   color: $color-5;
-  [data-show] {
-    display: block;
-    &.active {
+  &--disabled{
+    opacity: 0;
+    pointer-events: none;
+  }
+  &__item{
+    margin: 0 18px 18px 0;
+    &.hidden{
       display: none;
     }
+    &--view-switch {
+      padding: 0;
+      display: flex;
+      height: 60px;
+      line-height: 60px;
+      border: 2px solid $color-6;
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    &:last-child {
+      margin-left: auto;
+    }
   }
-  &__item {
+  &__btn {
     height: 60px;
-    line-height: 60px;
+    line-height: 56px;
     padding: 0 30px;
-    margin: 0 18px 18px 0;
     border: 2px solid $color-6;
     transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
     border-radius: 100px;
     overflow: hidden;
     cursor: pointer;
-    &.active, &:not(.tags-list__item--view-switch):hover {
+    &.active, &:hover {
       border-color: $color-3;
       background-color: $color-3;
       color: $color-2;
     }
     &:hover .tags-list__item-name {
       color: $color-2;
-    }
-    &:last-child {
-      margin-left: auto;
-    }
-    &--view-switch {
-      padding: 0;
-      display: flex;
-    }
-    &.hidden{
-      display: none;
     }
   }
   &__item-name {
@@ -209,8 +301,10 @@
     width: 79px;
     text-align: center;
     transition: background-color .3s ease-in-out, box-shadow .3s ease-in-out;
+    cursor: pointer;
     path {
       fill: $color-1;
+      transition: fill .3s ease-in-out;
     }
     &.active, &:hover {
       box-shadow: inset 0 3px 7px rgba(61, 57, 53, 0.1);
@@ -219,13 +313,13 @@
         fill: $color-3;
       }
     }
-    &--grid {
+    &[data-grid-type='grid'] {
       border-right: 1px solid $color-6;
       svg {
         width: 24px;
       }
     }
-    &--list {
+    &[data-grid-type='list'] {
       border-left: 1px solid $color-6;
       svg {
         width: 26px;
@@ -381,14 +475,17 @@
   &__tags-list {
     margin-left: auto;
     display: flex;
+    flex-shrink: 0;
+    padding-left: 20px;
     .job-filter__grid--list &{
       display: none;
     }
     &--list-view{
       display: none;
+      width: 26%;
+      margin: 0;
+      padding: 0;
       .job-filter__grid--list &{
-        width: 26%;
-        margin: 0;
         display: flex;
       }
     }

@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_62af52190135a",
-            "label": "Logo",
-            "name": "logo",
+            "label": "Client",
+            "name": "client_logo",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -67,7 +67,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": 6,
-            "new_lines": "br"
+            "new_lines": "wpautop"
         }
     ],
     "location": [
@@ -88,5 +88,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1655657003
+    "modified": 1656033005
 }

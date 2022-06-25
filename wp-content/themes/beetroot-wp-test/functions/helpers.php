@@ -236,7 +236,6 @@ function get_clean_phone( $item ) {
 	return preg_replace( "/[^0-9]/", "", $item );
 }
 
-
 function get_current_year() {
 
 	echo date( 'Y' );
