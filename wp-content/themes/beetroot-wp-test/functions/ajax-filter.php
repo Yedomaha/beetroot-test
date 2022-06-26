@@ -77,6 +77,7 @@ function jobs_filter_ajax() {
 	$response = array(
 		"posts"     => $posts_html,
 		"max_pages" => $posts->max_num_pages,
+		"posts_count" => $posts->found_posts,
 		"args"      => $args,
 
 	);

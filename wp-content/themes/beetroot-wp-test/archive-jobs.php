@@ -64,6 +64,8 @@ $jobs_query           = new WP_Query( $args );
 $posts_count          = $jobs_query->found_posts;
 $load_more_btn_status = ( $paged >= $jobs_query->max_num_pages ) ? 'hide' : '';
 
+$posts_count_string = $posts_count === 1 ? $posts_count.' opening' : $posts_count.' openings';
+
 ?>
 
 <section class="job-openings">
@@ -258,7 +260,7 @@ $load_more_btn_status = ( $paged >= $jobs_query->max_num_pages ) ? 'hide' : '';
                     <div class="job-filter__grid-wrap">
                         <div class="job-filter__grid-header">
                             <div class="job-filter__header-col">
-                                <span class="job-filter__counter"><?php echo $posts_count ?></span> <?php _e( ' openings', 'beetroot-wp-test' ) ?>
+                                <span data-posts-counter><?php echo $posts_count_string ?></span>
                             </div>
                             <div class="job-filter__header-col"><?php _e( 'department', 'beetroot-wp-test' ) ?></div>
                             <div class="job-filter__header-col"><?php _e( 'location', 'beetroot-wp-test' ) ?></div>

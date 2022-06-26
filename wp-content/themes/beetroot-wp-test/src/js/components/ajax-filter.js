@@ -189,13 +189,12 @@ export default () => {
             data: qs.stringify(data),
         }).then(response => {
             const response_data = response.data;
-            // console.log(response_data);
             const posts = response_data.posts;
             const maxPage = response_data.max_pages;
-            const args = response_data.args;
-            console.log(response_data);
+            const postsCount = response_data.posts_count;
 
             buttonVisibilityLogic(maxPage);
+            setPostsCount(postsCount);
 
             if (posts && posts.trim() !== '') {
                 noPostsStatusOff();
@@ -317,7 +316,6 @@ export default () => {
 
     };
 
-    /*Triggers logic*/
     const selectDeselectAllLogic = () => {
         let checkboxesGroupWraps = filterSection.querySelectorAll('.search-bar__drop-down-col');
         if (!checkboxesGroupWraps || checkboxesGroupWraps.length === 0) return;
@@ -352,7 +350,7 @@ export default () => {
                 })
             });
 
-            function setChangeBtnText(checkboxesGroupWrap){
+            function setChangeBtnText(checkboxesGroupWrap) {
                 let activeCheckboxes = checkboxesGroupWrap.querySelectorAll(`input[type='checkbox'][data-filter]:checked`);
                 if (activeCheckboxes && activeCheckboxes.length > 0) {
                     changeTrigger.innerText = deselectAllText;
@@ -364,6 +362,19 @@ export default () => {
         })
     };
 
+    const setPostsCount = (postsCount) => {
+        let postsCounter = filterSection.querySelector(`[data-posts-counter]`);
+        if (postsCounter) {
+            if (postsCount === 1) {
+                postsCounter.innerText = postsCount + ' opening';
+            } else {
+                postsCounter.innerText = postsCount + ' openings';
+            }
+        }
+    };
+
+    /*Triggers logic*/
+
     filterCheckboxes.forEach((item) => {
         item.addEventListener('change', (e) => {
             filterChange(e);
@@ -371,6 +382,7 @@ export default () => {
     });
     filterButtons.forEach((item) => {
         item.addEventListener('click', (e) => {
+            item.classList.toggle('active');
             filterChange(e);
         });
     });

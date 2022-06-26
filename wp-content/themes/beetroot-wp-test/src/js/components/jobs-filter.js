@@ -9,7 +9,6 @@ export default () => {
         sections.forEach((section) => {
             gridViewSwitchers(section);
             tagsListLogic(section);
-            tagsItemsClick(section);
         })
 
     }
@@ -85,16 +84,5 @@ export default () => {
             }
         }
 
-    }
-
-    function tagsItemsClick(section) {
-        const tagsItems = section.querySelectorAll('.tags-list__btn:not([data-view-switch]):not([data-show])');
-        if (!tagsItems || tagsItems.length === 0) return;
-
-        tagsItems.forEach((item) => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        })
     }
 }
