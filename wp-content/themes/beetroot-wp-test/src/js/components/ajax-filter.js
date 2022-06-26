@@ -87,7 +87,6 @@ export default () => {
     /*------*/
 
     const setDropDownPlaceholders = () => {
-        console.log('setDropDownPlaceholders');
         let dropDownWraps = filterSection.querySelectorAll('.search-bar__drop-down-wrap');
         if (!dropDownWraps || dropDownWraps.length === 0) return;
 
@@ -100,16 +99,14 @@ export default () => {
 
             activeCheckboxes.forEach((item) => {
                 placeholderArr.push(item.dataset.name);
-            })
+            });
 
             let uniArr = [...new Set(placeholderArr)];
             let placeholderString = uniArr.join(', ');
 
-            if(placeholderString && placeholderString !== ''){
-                console.log('123');
+            if (placeholderString && placeholderString !== '') {
                 placeholder.innerText = placeholderString;
-            } else{
-                console.log('321');
+            } else {
                 placeholder.innerText = placeholderDefaultText;
             }
         })
@@ -320,6 +317,53 @@ export default () => {
 
     };
 
+    /*Triggers logic*/
+    const selectDeselectAllLogic = () => {
+        let checkboxesGroupWraps = filterSection.querySelectorAll('.search-bar__drop-down-col');
+        if (!checkboxesGroupWraps || checkboxesGroupWraps.length === 0) return;
+
+        checkboxesGroupWraps.forEach((cbgWrap) => {
+            let checkboxes = cbgWrap.querySelectorAll(`input[type='checkbox'][data-filter]`);
+            if (!checkboxes || checkboxes.length === 0) return;
+
+            let changeTrigger = cbgWrap.querySelector(`[data-change]`);
+            let selectAllText = changeTrigger.getAttribute('data-select-all');
+            let deselectAllText = changeTrigger.getAttribute('data-hide-all');
+            setChangeBtnText(cbgWrap);
+
+            changeTrigger.addEventListener('click', () => {
+                let activeCheckboxes = cbgWrap.querySelectorAll(`input[type='checkbox'][data-filter]:checked`);
+                if (activeCheckboxes && activeCheckboxes.length > 0) {
+                    activeCheckboxes.forEach((checkbox) => {
+                        checkbox.checked = false;
+                    })
+                } else {
+                    checkboxes.forEach((checkbox) => {
+                        checkbox.checked = true;
+                    });
+                }
+                setChangeBtnText(cbgWrap);
+                filterChange();
+            });
+
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', () => {
+                    setChangeBtnText(cbgWrap)
+                })
+            });
+
+            function setChangeBtnText(checkboxesGroupWrap){
+                let activeCheckboxes = checkboxesGroupWrap.querySelectorAll(`input[type='checkbox'][data-filter]:checked`);
+                if (activeCheckboxes && activeCheckboxes.length > 0) {
+                    changeTrigger.innerText = deselectAllText;
+                } else {
+                    changeTrigger.innerText = selectAllText;
+                }
+            }
+
+        })
+    };
+
     filterCheckboxes.forEach((item) => {
         item.addEventListener('change', (e) => {
             filterChange(e);
@@ -354,6 +398,7 @@ export default () => {
     loadMoreButton.addEventListener('click', loadMoreClick);
 
     filterFromUrlParams();
+    selectDeselectAllLogic();
 
     filterSection.classList.add('filterInit');
 
