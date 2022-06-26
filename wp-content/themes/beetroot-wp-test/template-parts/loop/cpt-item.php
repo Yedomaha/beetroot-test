@@ -9,6 +9,8 @@ $job_locations = get_terms_string( $job_locations, ', ' );
 
 $job_departments      = get_the_terms( get_the_ID(), 'job_departments' );
 $job_departments_list = get_terms_string( $job_departments, ', ' );
+
+$job_technologies = get_the_terms( get_the_ID(), 'job_technologies' );
 ?>
 
 <article class="cpt-item">
@@ -53,64 +55,67 @@ $job_departments_list = get_terms_string( $job_departments, ', ' );
 
 			<?php endif; ?>
 
-            <ul class="cpt-item__tags-list">
-                <li class="cpt-item__tags-item">
-                    <div class="cpt-item__tag-info"
-                         style="background-color: rgb(145, 214, 190);">
-                        <span class="cpt-item__tag-info-text">Magento</span>
-                        <div class="cpt-item__tag-info-arrow"
-                             style="border-top-color: rgb(145, 214, 190);"></div>
-                    </div>
-                    <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg"
-                         alt="" class="cpt-item__tags-img">
-                </li>
-                <li class="cpt-item__tags-item">
-                    <div class="cpt-item__tag-info">
-                        <span class="cpt-item__tag-info-text">PHP</span>
-                        <div class="cpt-item__tag-info-arrow"></div>
-                    </div>
-                    <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/php-icon.svg"
-                         alt="" class="cpt-item__tags-img">
-                </li>
-                <li class="cpt-item__tags-item">
-                    <div class="cpt-item__tag-info">
-                        <span class="cpt-item__tag-info-text">Magento</span>
-                        <div class="cpt-item__tag-info-arrow"></div>
-                    </div>
-                    <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/magento-icon.svg"
-                         alt="" class="cpt-item__tags-img">
-                </li>
-            </ul>
+			<?php if ( $job_technologies && count( $job_technologies ) > 0 ): ?>
+
+                <ul class="cpt-item__tags-list">
+
+					<?php $i = 0;
+					foreach ( $job_technologies as $item ): ?>
+						<?php
+						$item_icon    = get_field( 'icon', $item );
+						$item_icon_id = checkImg( $item_icon );
+						?>
+						<?php if ( $item_icon_id && $i < 3 ): $i ++ ?>
+
+                            <li class="cpt-item__tags-item">
+                                <div class="cpt-item__tag-info"
+                                     style="border-top-color: #bc204b;">
+                                    <span class="cpt-item__tag-info-text"><?php echo $item->name ?></span>
+                                    <div class="cpt-item__tag-info-arrow"
+                                         style="border-top-color: #bc204b;"></div>
+                                </div>
+                                <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?>
+                                        class="cpt-item__tags-img">
+                            </li>
+
+						<?php endif; ?>
+					<?php endforeach; ?>
+
+                </ul>
+
+			<?php endif; ?>
 
         </div>
 
-        <ul class="cpt-item__tags-list cpt-item__tags-list--list-view">
-            <li class="cpt-item__tags-item">
-                <div class="cpt-item__tag-info" style="background-color: rgb(145, 214, 190);">
-                    <span class="cpt-item__tag-info-text">Magento</span>
-                    <div class="cpt-item__tag-info-arrow"
-                         style="border-top-color: rgb(145, 214, 190);"></div>
-                </div>
-                <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg"
-                     alt="" class="cpt-item__tags-img">
-            </li>
-            <li class="cpt-item__tags-item">
-                <div class="cpt-item__tag-info">
-                    <span class="cpt-item__tag-info-text">PHP</span>
-                    <div class="cpt-item__tag-info-arrow"></div>
-                </div>
-                <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/php-icon.svg"
-                     alt="" class="cpt-item__tags-img">
-            </li>
-            <li class="cpt-item__tags-item">
-                <div class="cpt-item__tag-info">
-                    <span class="cpt-item__tag-info-text">Magento</span>
-                    <div class="cpt-item__tag-info-arrow"></div>
-                </div>
-                <img src="http://beetroot-test.loc/wp-content/themes/beetroot-wp-test/dist/img/tech-icons/magento-icon.svg"
-                     alt="" class="cpt-item__tags-img">
-            </li>
-        </ul>
+		<?php if ( $job_technologies && count( $job_technologies ) > 0 ): ?>
+
+            <ul class="cpt-item__tags-list cpt-item__tags-list--list-view">
+
+				<?php $i = 0;
+				foreach ( $job_technologies as $item ): ?>
+					<?php
+					$item_icon    = get_field( 'icon', $item );
+					$item_icon_id = checkImg( $item_icon );
+					?>
+					<?php if ( $item_icon_id && $i < 3 ): $i ++ ?>
+
+                        <li class="cpt-item__tags-item">
+                            <div class="cpt-item__tag-info"
+                                 style="border-top-color: #bc204b;">
+                                <span class="cpt-item__tag-info-text"><?php echo $item->name ?></span>
+                                <div class="cpt-item__tag-info-arrow"
+                                     style="border-top-color: #bc204b;"></div>
+                            </div>
+                            <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?>
+                                    class="cpt-item__tags-img">
+                        </li>
+
+					<?php endif; ?>
+				<?php endforeach; ?>
+
+            </ul>
+
+		<?php endif; ?>
 
         <div class="cpt-item__logo-wrap cpt-item__logo-wrap--list-view">
 
@@ -121,5 +126,6 @@ $job_departments_list = get_terms_string( $job_departments, ', ' );
 			<?php endif; ?>
 
         </div>
+
     </div>
 </article>

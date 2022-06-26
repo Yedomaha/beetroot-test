@@ -16,7 +16,7 @@ export default () => {
 
     function gridViewSwitchers(section) {
         const viewSwitchers = section.querySelectorAll('[data-grid-type]');
-        const postsGrid = section.querySelector('.job-filter__grid');
+        const postsGrid = section.querySelector('.job-filter__grid-wrap');
         if (!viewSwitchers || viewSwitchers.length === 0 || !postsGrid) return;
 
         viewSwitchers.forEach((button) => {
@@ -24,9 +24,9 @@ export default () => {
                 changeActiveStatus(button);
                 let gridType = button.getAttribute('data-grid-type');
                 if (gridType === 'grid') {
-                    postsGrid.classList.remove('job-filter__grid--list');
+                    postsGrid.classList.remove('job-filter__grid-wrap--list');
                 } else if (gridType === 'list') {
-                    postsGrid.classList.add('job-filter__grid--list');
+                    postsGrid.classList.add('job-filter__grid-wrap--list');
                 }
             });
         });
@@ -88,7 +88,6 @@ export default () => {
     }
 
     function tagsItemsClick(section) {
-        /*temp*/
         const tagsItems = section.querySelectorAll('.tags-list__btn:not([data-view-switch]):not([data-show])');
         if (!tagsItems || tagsItems.length === 0) return;
 

@@ -28,14 +28,21 @@ $job_locations = get_categories( [
 	'hide_empty' => true,
 ] );
 
+$job_locations_academy = get_categories( [
+	'taxonomy'   => 'job_locations_academy',
+	'hide_empty' => true,
+] );
+
 $job_technologies = get_categories( [
 	'taxonomy'   => 'job_technologies',
 	'hide_empty' => true,
 ] );
 
+$locations_drop_down_modifier = ( $job_locations && count( $job_locations ) > 0 && $job_locations_academy && count( $job_locations_academy ) > 0 ) ? false : 'search-bar__drop-down--one-col';
+
 
 /*Job posts query*/
-$posts_to_show = get_option( 'posts_per_page' );
+$posts_per_page = get_option( 'posts_per_page' );
 
 if ( get_query_var( 'paged' ) ) {
 	$paged = get_query_var( 'paged' );
@@ -47,10 +54,10 @@ if ( get_query_var( 'paged' ) ) {
 
 $args = array(
 	'paged'          => $paged,
+	'posts_per_page' => $posts_per_page,
 	'post_type'      => 'jobs',
 	'orderby'        => 'date',
 	'post_status'    => 'publish',
-	'posts_per_page' => $posts_to_show,
 );
 
 $jobs_query           = new WP_Query( $args );
@@ -62,6 +69,7 @@ $load_more_btn_status = ( $paged >= $jobs_query->max_num_pages ) ? 'hide' : '';
 <section class="job-openings">
     <div class="container">
         <div class="job-openings__inner">
+
             <div class="job-openings__title-area">
 
 				<?php if ( ! empty( $title ) ): ?>
@@ -79,8 +87,9 @@ $load_more_btn_status = ( $paged >= $jobs_query->max_num_pages ) ? 'hide' : '';
 
             </div>
 
-            <div class="job-filter job-openings__filter">
+            <div data-filter-wrap class="job-filter job-openings__filter">
                 <div class="search-bar job-filter__search-bar">
+
                     <div class="search-bar__input-wrap">
                         <input class="search-bar__input"
                                placeholder="<?php _e( 'Search job openings', 'beetroot-wp-test' ) ?>"
@@ -89,7 +98,7 @@ $load_more_btn_status = ( $paged >= $jobs_query->max_num_pages ) ? 'hide' : '';
                     </div>
 
                     <div class="search-bar__drop-down-wrap">
-                        <button class="search-bar__drop-down-btn"><?php _e( 'All departments', 'beetroot-wp-test' ) ?></button>
+                        <button data-placeholder="<?php _e( 'All departments', 'beetroot-wp-test' ) ?>" class="search-bar__drop-down-btn"><?php _e( 'All departments', 'beetroot-wp-test' ) ?></button>
                         <div class="search-bar__drop-down search-bar__drop-down--one-col">
                             <div class="search-bar__drop-down-col">
                                 <h3 class="search-bar__drop-down-title"><?php _e( 'Departments', 'beetroot-wp-test' ) ?></h3>
@@ -103,7 +112,9 @@ $load_more_btn_status = ( $paged >= $jobs_query->max_num_pages ) ? 'hide' : '';
                                             <li class="search-bar__drop-down-item">
                                                 <label class="checkbox search-bar__checkbox"><?php echo $item->name ?>
                                                     <input data-filter="department"
-                                                           data-value="<?php echo $item->term_id ?>" type="checkbox"
+                                                           data-value="<?php echo $item->term_id ?>"
+                                                           data-name="<?php echo $item->name ?>"
+                                                           type="checkbox"
                                                            class="checkbox__input">
                                                     <span class="checkbox__span"></span>
                                                 </label>
@@ -115,8 +126,10 @@ $load_more_btn_status = ( $paged >= $jobs_query->max_num_pages ) ? 'hide' : '';
                                     </ul>
 
                                     <div class="search-bar__change-button-wrap">
-                                        <!--todo:-->
-                                        <button data-change class="search-bar__change-all">select all</button>
+                                        <button data-change
+                                                data-select-all="<?php _e( 'select all', 'beetroot-wp-test' ) ?>"
+                                                data-hide-all="<?php _e( 'deselect all', 'beetroot-wp-test' ) ?>"
+                                                class="search-bar__change-all"><?php _e( 'select all', 'beetroot-wp-test' ) ?></button>
                                     </div>
 
 								<?php endif; ?>
@@ -126,79 +139,75 @@ $load_more_btn_status = ( $paged >= $jobs_query->max_num_pages ) ? 'hide' : '';
 
                     <!--todo:-->
                     <div class="search-bar__drop-down-wrap">
-                        <button class="search-bar__drop-down-btn"><?php _e( 'All locations', 'beetroot-wp-test' ) ?></button>
-                        <div class="search-bar__drop-down">
-                            <div class="search-bar__drop-down-col">
-                                <h3 class="search-bar__drop-down-title">Offices</h3>
-                                <ul class="search-bar__drop-down-list">
-                                    <li class="search-bar__drop-down-item">
-                                        <label class="checkbox search-bar__checkbox">Lorem ipsum 1
-                                            <input type="checkbox" checked="checked" class="checkbox__input">
-                                            <span class="checkbox__span"></span>
-                                        </label>
-                                        <div class="search-bar__counter">5</div>
-                                    </li>
-                                    <li class="search-bar__drop-down-item">
-                                        <label class="checkbox search-bar__checkbox">Lorem ipsum 2
-                                            <input type="checkbox" checked="checked" class="checkbox__input">
-                                            <span class="checkbox__span"></span>
-                                        </label>
-                                        <div class="search-bar__counter">3</div>
-                                    </li>
-                                    <li class="search-bar__drop-down-item">
-                                        <label class="checkbox search-bar__checkbox">Lorem ipsum 3
-                                            <input type="checkbox" checked="checked" class="checkbox__input">
-                                            <span class="checkbox__span"></span>
-                                        </label>
-                                        <div class="search-bar__counter">15</div>
-                                    </li>
-                                </ul>
-                                <div class="search-bar__change-button-wrap">
-                                    <button data-change class="search-bar__change-all">select all</button>
+                        <button data-placeholder="<?php _e( 'All locations', 'beetroot-wp-test' ) ?>" class="search-bar__drop-down-btn"><?php _e( 'All locations', 'beetroot-wp-test' ) ?></button>
+                        <div class="search-bar__drop-down <?php echo $locations_drop_down_modifier ?>">
+
+							<?php if ( $job_locations && count( $job_locations ) > 0 ): ?>
+
+                                <div class="search-bar__drop-down-col">
+                                    <h3 class="search-bar__drop-down-title"><?php _e( 'Offices', 'beetroot-wp-test' ) ?></h3>
+                                    <ul class="search-bar__drop-down-list">
+
+										<?php foreach ( $job_locations as $item ): ?>
+
+                                            <li class="search-bar__drop-down-item">
+                                                <label class="checkbox search-bar__checkbox"><?php echo $item->name ?>
+                                                    <input data-filter="locations_office"
+                                                           data-value="<?php echo $item->term_id ?>"
+                                                           data-name="<?php echo $item->name ?>"
+                                                           type="checkbox"
+                                                           class="checkbox__input">
+                                                    <span class="checkbox__span"></span>
+                                                </label>
+                                                <div class="search-bar__counter"><?php echo $item->count ?></div>
+                                            </li>
+
+										<?php endforeach; ?>
+
+                                    </ul>
+                                    <div class="search-bar__change-button-wrap">
+                                        <button data-change
+                                                data-select-all="<?php _e( 'select all', 'beetroot-wp-test' ) ?>"
+                                                data-hide-all="<?php _e( 'deselect all', 'beetroot-wp-test' ) ?>"
+                                                class="search-bar__change-all"><?php _e( 'select all', 'beetroot-wp-test' ) ?></button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="search-bar__drop-down-col">
-                                <h3 class="search-bar__drop-down-title">Academies</h3>
-                                <ul class="search-bar__drop-down-list">
-                                    <li class="search-bar__drop-down-item">
-                                        <label class="checkbox search-bar__checkbox">Lorem ipsum 1
-                                            <input type="checkbox" class="checkbox__input">
-                                            <span class="checkbox__span"></span>
-                                        </label>
-                                        <div class="search-bar__counter">3</div>
-                                    </li>
-                                    <li class="search-bar__drop-down-item">
-                                        <label class="checkbox search-bar__checkbox">Lorem ipsum 2
-                                            <input type="checkbox" class="checkbox__input">
-                                            <span class="checkbox__span"></span>
-                                        </label>
-                                    </li>
-                                    <li class="search-bar__drop-down-item">
-                                        <label class="checkbox search-bar__checkbox">Lorem ipsum 3
-                                            <input type="checkbox" class="checkbox__input">
-                                            <span class="checkbox__span"></span>
-                                        </label>
-                                        <div class="search-bar__counter">33</div>
-                                    </li>
-                                    <li class="search-bar__drop-down-item">
-                                        <label class="checkbox search-bar__checkbox">Lorem ipsum 3
-                                            <input type="checkbox" class="checkbox__input">
-                                            <span class="checkbox__span"></span>
-                                        </label>
-                                        <div class="search-bar__counter">3</div>
-                                    </li>
-                                    <li class="search-bar__drop-down-item">
-                                        <label class="checkbox search-bar__checkbox">Lorem ipsum 3
-                                            <input type="checkbox" class="checkbox__input">
-                                            <span class="checkbox__span"></span>
-                                        </label>
-                                        <div class="search-bar__counter">3</div>
-                                    </li>
-                                </ul>
-                                <div class="search-bar__change-button-wrap">
-                                    <button data-change class="search-bar__change-all">select all</button>
+
+							<?php endif; ?>
+
+							<?php if ( $job_locations_academy && count( $job_locations_academy ) > 0 ): ?>
+
+                                <div class="search-bar__drop-down-col search-bar__drop-down-col--green">
+                                    <h3 class="search-bar__drop-down-title"><?php _e( 'Academies', 'beetroot-wp-test' ) ?></h3>
+                                    <ul class="search-bar__drop-down-list">
+
+										<?php foreach ( $job_locations_academy as $item ): ?>
+
+                                            <li class="search-bar__drop-down-item">
+                                                <label class="checkbox search-bar__checkbox"><?php echo $item->name ?>
+                                                    <input data-filter="locations_academy"
+                                                           data-value="<?php echo $item->term_id ?>"
+                                                           data-name="<?php echo $item->name ?>"
+                                                           type="checkbox"
+                                                           class="checkbox__input">
+                                                    <span class="checkbox__span"></span>
+                                                </label>
+                                                <div class="search-bar__counter"><?php echo $item->count ?></div>
+                                            </li>
+
+										<?php endforeach; ?>
+
+                                    </ul>
+                                    <div class="search-bar__change-button-wrap">
+                                        <button data-change
+                                                data-select-all="<?php _e( 'select all', 'beetroot-wp-test' ) ?>"
+                                                data-hide-all="<?php _e( 'deselect all', 'beetroot-wp-test' ) ?>"
+                                                class="search-bar__change-all"><?php _e( 'select all', 'beetroot-wp-test' ) ?></button>
+                                    </div>
                                 </div>
-                            </div>
+
+							<?php endif; ?>
+
                         </div>
                     </div>
                 </div>
@@ -246,8 +255,8 @@ $load_more_btn_status = ( $paged >= $jobs_query->max_num_pages ) ? 'hide' : '';
 
 				<?php if ( $jobs_query->have_posts() ) : ?>
 
-                    <div class="job-filter__grid">
-                        <div class="job-filter__header">
+                    <div class="job-filter__grid-wrap">
+                        <div class="job-filter__grid-header">
                             <div class="job-filter__header-col">
                                 <span class="job-filter__counter"><?php echo $posts_count ?></span> <?php _e( ' openings', 'beetroot-wp-test' ) ?>
                             </div>
@@ -257,18 +266,28 @@ $load_more_btn_status = ( $paged >= $jobs_query->max_num_pages ) ? 'hide' : '';
                             <div class="job-filter__header-col"><?php _e( 'client', 'beetroot-wp-test' ) ?></div>
                         </div>
 
-						<?php while ( $jobs_query->have_posts() ) : $jobs_query->the_post(); ?>
-							<?php get_template_part( 'template-parts/loop/cpt-item' ) ?>
-						<?php endwhile; ?>
-						<?php wp_reset_postdata(); ?>
+                        <div data-filter-grid
+                             data-ajax-url="<?php echo admin_url( 'admin-ajax.php' ) ?>"
+                             data-posts-per-page="<?php echo $posts_per_page ?>"
+                             class="job-filter__grid">
+
+							<?php while ( $jobs_query->have_posts() ) : $jobs_query->the_post(); ?>
+								<?php get_template_part( 'template-parts/loop/cpt-item' ) ?>
+							<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+
+                        </div>
+
+                        <div class="job-filter__load-more-wrap">
+                            <button data-filter-load-more
+                                    class="job-filter__load-more-btn"><?php _e( 'Load more', 'beetroot-wp-test' ) ?></button>
+                        </div>
 
                     </div>
 
 				<?php else: ?>
 
-                    <div class="job-filter__grid job-filter__no-posts">
-                        No posts found.
-                    </div>
+                        <div class="noPostsText">No posts found.</div>
 
 				<?php endif; ?>
             </div>

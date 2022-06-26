@@ -253,9 +253,35 @@ function get_terms_string( $terms, $separator ) {
 		$terms_string .= $terms[ $i ]->name;
 		// If there is more than one term, comma separate them.
 		if ( $i < count( $terms ) - 1 ) {
-			$terms_string .= strval($separator);
+			$terms_string .= strval( $separator );
 		}
 	}
 
 	return $terms_string;
+}
+
+/**
+ * Check image function
+ */
+function checkImg( $img_arr ) {
+	$image_placeholder_arr = get_field( 'image_placeholder', 'options' );
+	if ( is_array( $img_arr ) && $img_arr['id'] ) {
+		return $img_arr['id'];
+	} elseif ( is_array( $image_placeholder_arr ) && $image_placeholder_arr['id'] ) {
+		return $image_placeholder_arr['id'];
+	} else {
+		return false;
+	}
+}
+
+/**
+ * Load template part function
+ */
+function load_template_part($template_name, $part_name = null)
+{
+	ob_start();
+	get_template_part($template_name, $part_name);
+	$var = ob_get_contents();
+	ob_end_clean();
+	return $var;
 }

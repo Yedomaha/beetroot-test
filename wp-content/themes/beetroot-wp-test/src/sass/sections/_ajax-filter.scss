@@ -1,0 +1,74 @@
+[data-filter-wrap]{
+  opacity: 0;
+  pointer-events: none;
+  &.filterInit{
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+[data-filter-load-more] {
+  opacity: 1;
+  pointer-events: all;
+  text-decoration: underline;
+  color: #000000;
+  &:hover {
+    opacity: .7;
+  }
+}
+
+[data-filter-load-more].hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-filter-grid] {
+  min-height: 300px;
+  position: relative;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border: .3em solid transparent;
+  border-left-color: #c73442;
+  border-right-color: #c73442;
+  border-radius: 50%;
+  animation: 3s loader linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+[data-filter-grid].showLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  .loader {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+[data-filter-grid].noPosts {
+
+}
+
+.noPosts{
+  display: flex;
+  align-items: center;
+}
+
+.noPostsText {
+  color: #000;
+  width: 100%;
+  text-align: center;
+}

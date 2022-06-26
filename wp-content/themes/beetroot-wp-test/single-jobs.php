@@ -41,18 +41,21 @@ $job_technologies = get_the_terms( $post->ID, 'job_technologies' );
                     <ul class="job-hero__technologies-list tags">
 
 						<?php foreach ( $job_technologies as $item ): ?>
+							<?php
+							$item_icon    = get_field( 'icon', $item );
+							$item_icon_id = checkImg( $item_icon );
+							?>
+							<?php if ( $item_icon_id ): ?>
 
-                            <li class="tags__item">
-                                <div class="tags__info">
-                                    <span class="tags__info-text">PHP</span>
-                                    <div class="tags__info-arrow"></div>
-                                </div>
-                                <img src="<?php echo get_template_directory_uri() ?>/dist/img/tech-icons/php-icon.svg"
-                                     alt="" class="tags__img">
-                            </li>
+                                <li class="tags__item">
+                                    <div class="tags__info">
+                                        <span class="tags__info-text"><?php echo $item->name ?></span>
+                                        <div class="tags__info-arrow"></div>
+                                    </div>
+                                    <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?> class="tags__img">
+                                </li>
 
-                            <!--		                --><?php //echo 'name - ' . $item->name . '<br>' . 'id - ' . $item->term_id; ?>
-
+							<?php endif; ?>
 
 						<?php endforeach; ?>
 

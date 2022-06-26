@@ -34,24 +34,28 @@
 
 .job-filter {
   &__search-bar {
+
   }
 
+  &__grid-wrap{
+
+  }
   &__grid {
     display: flex;
     flex-wrap: wrap;
     width: calc(100% + 60px);
     margin-left: -30px;
-    &--list{
+    .job-filter__grid-wrap--list &{
       width: 100%;
       margin: 0;
     }
   }
-  &__header{
+  &__grid-header{
     display: none;
     padding-bottom: 24px;
     border-bottom: 2px solid rgba(61, 57, 53, .1);
     width: 100%;
-    .job-filter__grid--list &{
+    .job-filter__grid-wrap--list &{
       display: flex;
     }
   }
@@ -60,6 +64,7 @@
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 400;
+    padding-right: 40px;
     &:nth-child(1n){
       width: 30%;
     }
@@ -79,6 +84,8 @@
 }
 
 .search-bar {
+  position: relative;
+  z-index: 1;
   display: flex;
   margin-bottom: 60px;
   &__input-wrap, &__drop-down-wrap {
@@ -148,10 +155,13 @@
     }
   }
   &__drop-down-btn {
-    padding: 0 50px;
+    padding: 0 100px 0 50px;
     height: 100%;
     width: 100%;
     text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &:before {
       content: '';
       width: 29px;
@@ -209,6 +219,9 @@
     font-weight: 400;
     text-transform: uppercase;
     color: $color-3;
+    .search-bar__drop-down-col--green &{
+      color: $color-10;
+    }
   }
   &__drop-down-list{
     margin-bottom: 20px;
@@ -233,6 +246,11 @@
   }
   &__change-all{
     font-size: 22px;
+    cursor: pointer;
+    transition: opacity .3s ease-in-out;
+    &:hover{
+      opacity: .7;
+    }
   }
 }
 
@@ -333,17 +351,21 @@
     width: 33.33%;
     padding: 0 30px 60px 30px;
   }
-  .job-filter__grid--list & {
+  .job-filter__grid-wrap--list & {
     width: 100%;
     padding: 0;
   }
   &__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     padding: 45px 50px;
     background-color: $color-2;
     border-radius: 20px;
-    .job-filter__grid--list & {
-      display: flex;
+    .job-filter__grid-wrap--list & {
+      height: auto;
+      flex-direction: row;
       padding: 24px 0;
       background-color: transparent;
       border-bottom: 2px solid rgba(61, 57, 53, .1);
@@ -360,11 +382,12 @@
     }
   }
   &__header {
-    min-height: 51px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 45px;
-    .job-filter__grid--list & {
+    .job-filter__grid-wrap--list & {
+      min-height: unset;
+      padding-right: 40px;
       width: 30%;
       margin: 0;
       align-items: center;
@@ -376,6 +399,7 @@
   &__title {
     display: flex;
     align-items: flex-end;
+    padding-top: 15px;
     font-size: 36px;
     font-weight: 400;
     &--with-logo {
@@ -391,16 +415,21 @@
   &__logo-wrap {
     padding-left: 32px;
     width: 200px;
-    .job-filter__grid--list & {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    .job-filter__grid-wrap--list & {
       display: none;
     }
     &--list-view{
       display: none;
-      .job-filter__grid--list & {
+      .job-filter__grid-wrap--list & {
         padding: 0;
         width: 10%;
         display: flex;
         align-items: center;
+        flex-direction: row;
+        justify-content: unset;
       }
     }
     img {
@@ -408,7 +437,7 @@
       display: block;
       max-height: 100%;
       max-width: 100%;
-      .job-filter__grid--list &{
+      .job-filter__grid-wrap--list &{
         margin: 0;
       }
     }
@@ -419,7 +448,7 @@
     &:last-child {
       margin-bottom: 0;
     }
-    .job-filter__grid--list & {
+    .job-filter__grid-wrap--list & {
       display: none;
     }
   }
@@ -427,16 +456,20 @@
     display: none;
     width: 18%;
     align-items: center;
-    .job-filter__grid--list & {
+    .job-filter__grid-wrap--list & {
       display: flex;
+      padding-right: 40px;
     }
   }
   &__footer {
+    margin-top: auto;
     position: relative;
     display: flex;
     align-items: center;
     min-height: 60px;
-    .job-filter__grid--list & {
+    .job-filter__grid-wrap--list & {
+      margin-top: 0;
+      padding-right: 40px;
       width: 16%;
     }
   }
@@ -459,7 +492,7 @@
     padding-left: 36px;
     transition: transform .3s ease-in-out, opacity .3s ease-in-out;
     transition-delay: .2s;
-    .job-filter__grid--list & {
+    .job-filter__grid-wrap--list & {
       padding: 0;
     }
     svg {
@@ -467,7 +500,7 @@
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      .job-filter__grid--list & {
+      .job-filter__grid-wrap--list & {
         display: none;
       }
     }
@@ -477,7 +510,7 @@
     display: flex;
     flex-shrink: 0;
     padding-left: 20px;
-    .job-filter__grid--list &{
+    .job-filter__grid-wrap--list &{
       display: none;
     }
     &--list-view{
@@ -485,8 +518,10 @@
       width: 26%;
       margin: 0;
       padding: 0;
-      .job-filter__grid--list &{
+      .job-filter__grid-wrap--list &{
         display: flex;
+        align-items: center;
+        padding-right: 40px;
       }
     }
   }

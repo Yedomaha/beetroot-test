@@ -77,6 +77,7 @@
     "gsap": "^3.8.0",
     "object-fit-images": "^3.2.4",
     "object-fit-videos": "^1.0.4",
+    "qs": "^6.10.5",
     "swiper": "^7.0.7"
   }
 }

@@ -27,6 +27,7 @@
 /*
 Custom checkboxes
 */
+
 .checkbox {
   display: block;
   position: relative;
@@ -48,11 +49,14 @@ Custom checkboxes
   width: 36px;
   height: 36px;
   border-radius: 12px;
-  border: 2px solid #bc204b;
+  border: 2px solid $color-3;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
   transition: background-color .3s ease-in-out;
+  .search-bar__drop-down-col--green &{
+    border: 2px solid $color-10;
+  }
 }
 
 .checkbox:hover .checkbox__input ~ .checkbox__span {
@@ -61,6 +65,9 @@ Custom checkboxes
 
 .checkbox .checkbox__input:checked ~ .checkbox__span {
   background-color: $color-3;
+  .search-bar__drop-down-col--green &{
+    background-color: $color-10;
+  }
 }
 
 .checkbox__span:after {

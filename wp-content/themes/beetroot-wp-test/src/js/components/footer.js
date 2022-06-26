@@ -10,7 +10,6 @@ export default () => {
         const footer = document.getElementById('footer');
         if (!main || !footer) return;
         let footerHeight = footer.clientHeight;
-        console.log(footerHeight);
         main.style.cssText = `margin-bottom:${footerHeight}px`;
     }
 
