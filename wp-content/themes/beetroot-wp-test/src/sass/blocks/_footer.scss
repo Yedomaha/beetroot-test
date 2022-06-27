@@ -7,34 +7,94 @@
   width: 100%;
   background-color: $color-1;
   color: rgba(254, 254, 254, .6);
+  @media (max-width: $xxxl) {
+    padding: 100px 0 75px;
+  }
+  @media (max-width: $lg) {
+    position: relative;
+  }
+  @media (max-width: $md) {
+    padding: 70px 0;
+  }
   &__inner {
     display: flex;
     justify-content: space-between;
+    @media (max-width: $xxxl) {
+      flex-wrap: wrap;
+    }
   }
   &__col {
     width: 50%;
+    @media (max-width: $md) {
+      width: 100%;
+    }
     &--nav {
       max-width: 1200px;
+      @media (max-width: $md) {
+        max-width: unset;
+      }
     }
     &--socials {
       max-width: 1000px;
       padding-left: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @media (max-width: $xxxl) {
+        padding-left: 30px;
+      }
+      @media (max-width: $md) {
+        max-width: 350px;
+        padding: 0;
+        margin: 0 auto;
+      }
     }
-  }
-  &__nav-header {
-    padding-bottom: 51px;
   }
   &__nav-header, &__nav-body {
     display: flex;
   }
+  &__nav-body {
+    @media (max-width: $md) {
+      flex-wrap: wrap;
+      max-width: 350px;
+      margin: 0 auto 30px;
+    }
+  }
+  &__nav-header {
+    padding-bottom: 50px;
+    @media (max-width: $xxxl) {
+      padding-bottom: 25px;
+    }
+    @media (max-width: $md) {
+      display: none;
+    }
+  }
   &__nav-col {
     padding-right: 40px;
     width: 33.3%;
+    @media (max-width: $xxxl) {
+      padding-right: 20px;
+    }
+    @media (max-width: $md) {
+      padding: 0;
+      width: 100%;
+      margin: 0 0 20px;
+      text-align: center;
+    }
   }
   &__nav-title {
+    text-transform: uppercase;
     font-size: 20px;
+    color: rgba(254, 254, 254, .2);
+    @media (max-width: $xxxl) {
+      font-size: 10px;
+    }
     &--mobile {
       display: none;
+      margin-bottom: 15px;
+      @media (max-width: $md) {
+        display: block;
+      }
     }
   }
   &__nav {
@@ -42,7 +102,13 @@
 
     }
     li {
-      margin-bottom: 25px;
+      margin-bottom: 35px;
+      @media (max-width: $xxxl) {
+        margin-bottom: 15px;
+      }
+      @media (max-width: $md) {
+        margin-bottom: 7px;
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -52,7 +118,13 @@
 
 .socials-list {
   display: flex;
-  margin-bottom: 89px;
+  margin-bottom: 50px;
+  @media (max-width: $xxxl) {
+    margin-bottom: 25px;
+  }
+  @media (max-width: $md) {
+    justify-content: center;
+  }
   &:last-child {
     margin-bottom: 0;
   }
@@ -61,6 +133,9 @@
     margin-right: 19px;
     opacity: .3;
     transition: opacity .3s ease-in-out;
+    @media (max-width: $xxxl) {
+      margin-right: 10px;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -79,6 +154,9 @@
   }
   &__icon {
     height: 90px;
+    @media (max-width: $xxxl) {
+      height: 40px;
+    }
   }
 }
 
@@ -88,41 +166,66 @@
     font-size: 20px;
     color: $color-7;
     text-transform: uppercase;
+    @media (max-width: $xxxl) {
+      margin-bottom: 2px;
+      font-size: 10px;
+    }
+    @media (max-width: $md) {
+      text-align: center;
+    }
   }
   &__form {
     height: 97px;
     position: relative;
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid rgba(241,184,40,.2);
+    border-bottom: 2px solid rgba(241, 184, 40, .2);
+    @media (max-width: $xxxl) {
+      height: 50px;
+    }
+    @media (max-width: $md) {
+      height: 40px;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
   }
   &__form-input {
     height: 100%;
-    width: calc(100% - 100px);
+    width: 100%;
+    padding-right: 40px;
     font-size: 34px;
     font-weight: 300;
     color: rgba(254, 254, 254, .6);
+    @media (max-width: $xxxl) {
+      padding-right: 20px;
+      font-size: 16px;
+    }
     &::placeholder {
-      //font-size: 34px;
-      //font-weight: 300;
-      //color: rgba(254, 254, 254, .6);
     }
     &:focus::placeholder {
       opacity: 0;
     }
   }
   &__form-submit {
+    position: absolute;
+    top: 0;
+    right: 0;
     height: 100%;
     width: 57px;
     background: url("../img/cta-arrow-orange.svg") no-repeat 100% 50%;
     background-size: 57px 11px;
     transition: transform .6s cubic-bezier(.68, -1.09, .33, 1.79);
     cursor: pointer;
-    &:hover{
-      transform: scale(1.15);
+    @media (max-width: $xxxl) {
+      width: 37px;
+      background-size: 37px 8px;
+    }
+    &:hover {
+      transform: translateX(-10%) scale(1.2);
     }
   }
-  &__form-message{
+  &__form-message {
     display: none;
   }
 }

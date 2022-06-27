@@ -28,7 +28,7 @@ $header_nav  = $header['navigation'];
 
 			<?php if ( ! empty( $header_nav ) ): ?>
 
-                <nav class="header__nav-wrap">
+                <nav data-burger-nav class="header__nav-wrap">
                     <ul>
 
 						<?php foreach ( $header_nav as $item ):
@@ -48,6 +48,15 @@ $header_nav  = $header['navigation'];
                 </nav>
 
 			<?php endif; ?>
+
+            <div class="header__burger-btn">
+                <div data-burger-btn class="burger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
 
         </div>
     </div>

@@ -2,12 +2,16 @@ import applicationForm from './components/alication-form';
 import setMarginBottomToMain from './components/footer';
 import jobsFilter from './components/jobs-filter';
 import ajaxFilter from './components/ajax-filter';
+import burgerMenu from './components/burger-menu';
+import dropDowns from './components/drop-downs';
 
 export default () => {
 
+    burgerMenu();
     setMarginBottomToMain();
     applicationForm();
     jobsFilter();
     ajaxFilter();
+    dropDowns();
 
 }

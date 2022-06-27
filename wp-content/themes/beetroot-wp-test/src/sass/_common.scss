@@ -6,15 +6,15 @@ html, body {
 
 
   @media (max-width: $xxxl) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media (max-width: $xl) {
-    font-size: 17px;
+
   }
 
   @media (max-width: $lg) {
-    font-size: 16px;
+
   }
 
   @media (max-width: $md) {
@@ -23,12 +23,16 @@ html, body {
 }
 
 main{
-  margin-top: 160px;
+  padding-top: 160px;
   background-color: #fff;
   position: relative;
   z-index: 2;
   @media (max-width: $xxxl) {
-    margin-top: 90px;
+    padding-top: 90px;
+  }
+  @media (max-width: $lg) {
+    padding-top: 60px;
+    margin-bottom: 0!important;
   }
 }
 

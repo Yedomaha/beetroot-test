@@ -99,8 +99,8 @@ $posts_count_string = $posts_count === 1 ? $posts_count.' opening' : $posts_coun
                                type="text">
                     </div>
 
-                    <div class="search-bar__drop-down-wrap">
-                        <button data-placeholder="<?php _e( 'All departments', 'beetroot-wp-test' ) ?>" class="search-bar__drop-down-btn"><?php _e( 'All departments', 'beetroot-wp-test' ) ?></button>
+                    <div data-dropdown class="search-bar__drop-down-wrap">
+                        <button data-dropdown-btn data-placeholder="<?php _e( 'All departments', 'beetroot-wp-test' ) ?>" class="search-bar__drop-down-btn"><?php _e( 'All departments', 'beetroot-wp-test' ) ?></button>
                         <div class="search-bar__drop-down search-bar__drop-down--one-col">
                             <div class="search-bar__drop-down-col">
                                 <h3 class="search-bar__drop-down-title"><?php _e( 'Departments', 'beetroot-wp-test' ) ?></h3>
@@ -139,9 +139,8 @@ $posts_count_string = $posts_count === 1 ? $posts_count.' opening' : $posts_coun
                         </div>
                     </div>
 
-                    <!--todo:-->
-                    <div class="search-bar__drop-down-wrap">
-                        <button data-placeholder="<?php _e( 'All locations', 'beetroot-wp-test' ) ?>" class="search-bar__drop-down-btn"><?php _e( 'All locations', 'beetroot-wp-test' ) ?></button>
+                    <div data-dropdown class="search-bar__drop-down-wrap">
+                        <button data-dropdown-btn data-placeholder="<?php _e( 'All locations', 'beetroot-wp-test' ) ?>" class="search-bar__drop-down-btn"><?php _e( 'All locations', 'beetroot-wp-test' ) ?></button>
                         <div class="search-bar__drop-down <?php echo $locations_drop_down_modifier ?>">
 
 							<?php if ( $job_locations && count( $job_locations ) > 0 ): ?>

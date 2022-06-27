@@ -1,4 +1,4 @@
-.default-cta{
+.default-cta {
   font-size: 30px;
   display: inline-block;
   padding: 28px 35px;
@@ -8,11 +8,15 @@
   border-radius: 100px;
   cursor: pointer;
   transition: color .3s ease-in-out, background-color .3s ease-in-out;
+  @media (max-width: $xxxl) {
+    font-size: 16px;
+    padding: 12px 22px;
+  }
   &:hover {
     color: $color-2;
     background-color: $color-3;
   }
-  &--red{
+  &--red {
     color: $color-2;
     background-color: $color-3;
     &:hover {
@@ -22,7 +26,6 @@
     }
   }
 }
-
 
 /*
 Custom checkboxes
@@ -37,6 +40,13 @@ Custom checkboxes
   line-height: 1.35714;
   user-select: none;
   background-color: $color-2;
+  @media (max-width: $xxxl) {
+    padding-left: 27px;
+    font-size: 17px;
+  }
+  @media (max-width: $md) {
+    font-size: 14px;
+  }
 }
 
 .checkbox .checkbox__input {
@@ -54,7 +64,12 @@ Custom checkboxes
   transform: translateY(-50%);
   left: 0;
   transition: background-color .3s ease-in-out;
-  .search-bar__drop-down-col--green &{
+  @media (max-width: $xxxl) {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+  }
+  .search-bar__drop-down-col--green & {
     border: 2px solid $color-10;
   }
 }
@@ -65,7 +80,7 @@ Custom checkboxes
 
 .checkbox .checkbox__input:checked ~ .checkbox__span {
   background-color: $color-3;
-  .search-bar__drop-down-col--green &{
+  .search-bar__drop-down-col--green & {
     background-color: $color-10;
   }
 }
@@ -89,4 +104,70 @@ Custom checkboxes
   height: 22px;
   background: url("../img/ok-white.svg") no-repeat center/contain;
   transition: opacity .3s ease-in-out;
+  @media (max-width: $xxxl) {
+    top: 1px;
+    left: 2px;
+    width: 11px;
+    height: 11px;
+  }
+}
+
+/* Burger button */
+
+.burger-btn {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+.burger-btn span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: $color-3;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger-btn span:nth-child(1) {
+  top: 0px;
+}
+
+.burger-btn span:nth-child(2), .burger-btn span:nth-child(3) {
+  top: 8px;
+}
+
+.burger-btn span:nth-child(4) {
+  top: 16px;
+}
+
+.burger-btn.open span{
+  background: $color-2;
+}
+
+.burger-btn.open span:nth-child(1) {
+  top: 8px;
+  width: 0%;
+  left: 50%;
+}
+
+.burger-btn.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.burger-btn.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.burger-btn.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
 }

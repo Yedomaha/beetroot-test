@@ -2,6 +2,18 @@
   position: relative;
   padding: 129px 0;
   background-color: $color-2;
+  @media (max-width: $xxxl){
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+  @media (max-width: $lg){
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+  @media (max-width: $md){
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
   &:before{
     content: '';
     position: absolute;
@@ -25,6 +37,9 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    @media (max-width: $md) {
+      flex-direction: column;
+    }
     .pre-footer--share &{
       justify-content: space-between;
     }
@@ -34,9 +49,23 @@
     padding: 0 30px;
     font-size: 40px;
     font-weight: 300;
+    @media (max-width: $xxxl) {
+      font-size: 28px;
+      padding: 0 15px;
+      margin: 8px 0;
+    }
+    @media (max-width: $md) {
+      font-size: 16px;
+      margin: 8px 0 15px;
+    }
     .pre-footer--share &{
       font-size: 56px;
       padding: 0 30px 0 0;
+      @media (max-width: $xxxl) {
+        font-size: 28px;
+        padding: 0 15px;
+        margin: 8px 0;
+      }
     }
   }
   &__cta{

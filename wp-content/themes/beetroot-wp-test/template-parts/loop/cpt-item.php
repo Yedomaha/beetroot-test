@@ -57,7 +57,7 @@ $job_technologies = get_the_terms( get_the_ID(), 'job_technologies' );
 
 			<?php if ( $job_technologies && count( $job_technologies ) > 0 ): ?>
 
-                <ul class="cpt-item__tags-list">
+                <ul class="tags cpt-item__tags-list">
 
 					<?php $i = 0;
 					foreach ( $job_technologies as $item ): ?>
@@ -67,15 +67,13 @@ $job_technologies = get_the_terms( get_the_ID(), 'job_technologies' );
 						?>
 						<?php if ( $item_icon_id && $i < 3 ): $i ++ ?>
 
-                            <li class="cpt-item__tags-item">
-                                <div class="cpt-item__tag-info"
+                            <li class="tags__item">
+                                <div class="tags__info"
                                      style="border-top-color: #bc204b;">
-                                    <span class="cpt-item__tag-info-text"><?php echo $item->name ?></span>
-                                    <div class="cpt-item__tag-info-arrow"
-                                         style="border-top-color: #bc204b;"></div>
+                                    <span class="tags__info-text"><?php echo $item->name ?></span>
+                                    <div style="border-top-color: #bc204b;" class="tags__info-arrow"></div>
                                 </div>
-                                <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?>
-                                        class="cpt-item__tags-img">
+                                <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?> class="tags__img">
                             </li>
 
 						<?php endif; ?>
@@ -89,7 +87,7 @@ $job_technologies = get_the_terms( get_the_ID(), 'job_technologies' );
 
 		<?php if ( $job_technologies && count( $job_technologies ) > 0 ): ?>
 
-            <ul class="cpt-item__tags-list cpt-item__tags-list--list-view">
+            <ul class="tags cpt-item__tags-list cpt-item__tags-list--list-view">
 
 				<?php $i = 0;
 				foreach ( $job_technologies as $item ): ?>
@@ -99,15 +97,14 @@ $job_technologies = get_the_terms( get_the_ID(), 'job_technologies' );
 					?>
 					<?php if ( $item_icon_id && $i < 3 ): $i ++ ?>
 
-                        <li class="cpt-item__tags-item">
-                            <div class="cpt-item__tag-info"
+
+                        <li class="tags__item">
+                            <div class="tags__info"
                                  style="border-top-color: #bc204b;">
-                                <span class="cpt-item__tag-info-text"><?php echo $item->name ?></span>
-                                <div class="cpt-item__tag-info-arrow"
-                                     style="border-top-color: #bc204b;"></div>
+                                <span class="tags__info-text"><?php echo $item->name ?></span>
+                                <div style="border-top-color: #bc204b;" class="tags__info-arrow"></div>
                             </div>
-                            <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?>
-                                    class="cpt-item__tags-img">
+                            <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?> class="tags__img">
                         </li>
 
 					<?php endif; ?>

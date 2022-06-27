@@ -47,10 +47,21 @@ function override_admin_bar_css() {
         <style>
             #wpadminbar {
                 z-index: 1000000;
+                position: fixed!important;
             }
 
             header {
                 top: 32px !important;
+            }
+            @media screen and (max-width: 1023px) {
+                .header__nav-wrap{
+                    top: 32px !important;
+                }
+            }
+            @media screen and (max-width: 782px){
+                header, .header__nav-wrap{
+                    top: 46px !important;
+                }
             }
         </style>
 	<?php }

@@ -35,7 +35,12 @@ $socials            = $footer['socials'];
 							?>
 
                             <div class="footer__nav-col">
-                                <h6 class="footer__nav-title footer__nav-title--mobile"><?php echo $column_title ?></h6>
+
+								<?php if ( ! empty( $column_title ) ): ?>
+
+                                    <h6 class="footer__nav-title footer__nav-title--mobile"><?php echo $column_title ?></h6>
+
+								<?php endif; ?>
 
 								<?php if ( $column_nav ): ?>
 

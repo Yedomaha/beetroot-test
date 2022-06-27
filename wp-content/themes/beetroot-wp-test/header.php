@@ -20,7 +20,7 @@ if (class_exists('ACF')) {
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0 ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
