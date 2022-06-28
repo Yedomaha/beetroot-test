@@ -1,8 +1,8 @@
-.editor{
+.editor {
   background-color: $color-2;
   position: relative;
   z-index: 1;
-  &:before{
+  &:before {
     content: '';
     position: absolute;
     left: 0;
@@ -14,69 +14,148 @@
     transform: skewY(-1deg);
     transform-origin: 0 0;
   }
-  &__inner{
+  &__inner {
     padding: 119px 0 216px;
+    @media (max-width: $xxxl) {
+      padding: 75px 0;
+    }
+    @media (max-width: $md) {
+      padding: 35px 0;
+    }
   }
-  &__content{
+  &__content {
 
   }
 }
 
-.text-content{
-  p{
+.text-content {
+  p {
     font-size: 40px;
     line-height: (60/40);
     margin-bottom: 40px;
-    &:last-child{
+    @media (max-width: $xxxl) {
+      font-size: 21px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: $md) {
+      font-size: 17px;
+    }
+    &:last-child {
       margin-bottom: 0;
     }
   }
 
-  h1,h2,h3,h4,h5,h6{
+  b, strong{
+    font-weight: 600;
+  }
+
+  a{
+    text-decoration: underline;
+    transition: color .3s ease-in-out;
+    &:hover{
+      color: $color-3;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
     margin: 91px 0 46px;
     font-weight: 300;
     line-height: (90/70);
-    &:last-child{
+    @media (max-width: $xxxl) {
+      margin: 45px 0 23px;
+    }
+    @media (max-width: $md) {
+      margin: 30px 0 20px;
+    }
+    &:last-child {
       margin-bottom: 0;
     }
   }
 
-  h1{
+  h1 {
     font-size: 120px;
+    @media (max-width: $xxxl) {
+      font-size: 60px;
+    }
+    @media (max-width: $xxxl) {
+      font-size: 48px;
+    }
   }
-  h2{
+  h2 {
     font-size: 90px;
+    @media (max-width: $xxxl) {
+      font-size: 45px;
+    }
+    @media (max-width: $xxxl) {
+      font-size: 36px;
+    }
   }
-  h3{
+  h3 {
     font-size: 70px;
+    @media (max-width: $xxxl) {
+      font-size: 40px;
+    }
+    @media (max-width: $xxxl) {
+      font-size: 32px;
+    }
   }
-  h4{
+  h4 {
     font-size: 60px;
+    @media (max-width: $xxxl) {
+      font-size: 35px;
+      @media (max-width: $xxxl) {
+        font-size: 28px;
+      }
+    }
   }
-  h5{
+  h5 {
     font-size: 50px;
+    @media (max-width: $xxxl) {
+      font-size: 30px;
+    }
+    @media (max-width: $xxxl) {
+      font-size: 24px;
+    }
   }
-  h6{
+  h6 {
     font-size: 40px;
+    @media (max-width: $xxxl) {
+      font-size: 25px;
+    }
+    @media (max-width: $xxxl) {
+      font-size: 20px;
+    }
   }
 
-  ul, ol{
-    li{
+  ul, ol {
+    margin-bottom: 40px;
+    @media (max-width: $xxxl) {
+      margin-bottom: 20px;
+    }
+    li {
       position: relative;
       padding-left: 41px;
       margin-bottom: 10px;
       font-size: 34px;
       font-weight: 300;
       line-height: (50/34);
-      &:last-child{
+      @media (max-width: $xxxl) {
+        margin-bottom: 5px;
+        padding-left: 20px;
+        font-size: 18px;
+      }
+      @media (max-width: $md) {
+        font-size: 15px;
+      }
+      &:last-child {
         margin-bottom: 0;
       }
     }
   }
-  ul{
-    li{
-      &:before{
-        content:'';
+  ul {
+    li {
+      &:before {
+        content: '';
         position: absolute;
         display: block;
         top: 18px;
@@ -85,14 +164,23 @@
         height: 16px;
         border: 3px solid $color-8;
         border-radius: 100%;
+        @media (max-width: $xxxl) {
+          top: 7px;
+          width: 10px;
+          height: 10px;
+        }
+        @media (max-width: $md) {
+          top: 6px;
+        }
+
       }
     }
   }
-  ol{
+  ol {
     counter-reset: my-awesome-counter;
-    li{
+    li {
       counter-increment: my-awesome-counter;
-      &:before{
+      &:before {
         content: counter(my-awesome-counter) ". ";
         position: absolute;
         top: 10px;
@@ -100,6 +188,13 @@
         font-size: 0.7em;
         color: $color-8;
         font-weight: 500;
+        @media (max-width: $xxxl) {
+          top: 3px;
+        }
+        @media (max-width: $md) {
+          font-size: .9em;
+          top: 2px;
+        }
       }
     }
   }

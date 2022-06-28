@@ -2,9 +2,6 @@
   width: 95%;
   margin: 0 auto;
   max-width: 2340px;
-  &--sm{
-    max-width: 1540px;
-  }
 
   @media (max-width: $xxxl) {
     max-width: 1200px;
@@ -20,5 +17,12 @@
 
   @media (max-width: $sm) {
 
+  }
+
+  &--sm{
+    max-width: 1540px;
+    @media (max-width: $xxxl) {
+      max-width: 770px;
+    }
   }
 }

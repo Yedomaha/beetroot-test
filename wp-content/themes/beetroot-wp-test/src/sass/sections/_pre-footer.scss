@@ -49,9 +49,10 @@
     padding: 0 30px;
     font-size: 40px;
     font-weight: 300;
+    text-align: center;
     @media (max-width: $xxxl) {
       font-size: 28px;
-      padding: 0 15px;
+      padding: 0 25px;
       margin: 8px 0;
     }
     @media (max-width: $md) {
@@ -80,6 +81,10 @@
     margin-right: 16px;
     cursor: pointer;
     transition: opacity .3s ease-in-out;
+    @media (max-width: $xxxl){
+      height: 40px;
+      margin-right: 10px;
+    }
     &:hover{
       opacity: .7;
     }

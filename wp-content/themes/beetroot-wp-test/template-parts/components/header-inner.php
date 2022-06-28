@@ -18,8 +18,8 @@ $header_nav  = $header['navigation'];
 
 			<?php endif; ?>
 
-            <div class="header__lang-switcher">
-                <div class="header__current-lang"><a href="">Eng</a></div>
+            <div data-lang-switch class="header__lang-switcher">
+                <div class="header__current-lang"><button>Eng</button></div>
                 <ul>
                     <li><a href="">Укр</a></li>
                     <li><a href="">Рус</a></li>

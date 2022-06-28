@@ -4,6 +4,7 @@ import jobsFilter from './components/jobs-filter';
 import ajaxFilter from './components/ajax-filter';
 import burgerMenu from './components/burger-menu';
 import dropDowns from './components/drop-downs';
+import langSwitcher from './components/lang-switcher';
 
 export default () => {
 
@@ -13,5 +14,6 @@ export default () => {
     jobsFilter();
     ajaxFilter();
     dropDowns();
+    langSwitcher();
 
 }
