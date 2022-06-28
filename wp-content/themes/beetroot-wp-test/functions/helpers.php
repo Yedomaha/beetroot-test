@@ -243,8 +243,8 @@ function get_current_year() {
 }
 
 function get_terms_string( $terms, $separator ) {
-//	if(!isset($terms) || empty($terms) || !is_array($terms))
-//		return;
+	if(!isset($terms) || empty($terms) || !is_array($terms))
+		return;
 
 	$terms        = array_values( $terms );
 	$terms_string = '';

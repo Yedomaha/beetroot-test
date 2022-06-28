@@ -1,6 +1,6 @@
-.job-hero{
+.job-hero {
   background-color: $color-4;
-  &__inner{
+  &__inner {
     padding: 339px 0 170px;
     @media (max-width: $xxxl) {
       padding: 75px 0;
@@ -10,23 +10,34 @@
     }
 
   }
-  &__title{
+  &__title-wrap {
     margin-bottom: 56px;
+    @media (max-width: $xxxl) {
+      margin-bottom: 30px;
+    }
+    @media (max-width: $md) {
+      margin-bottom: 20px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+    margin-bottom: 25px;
     font-size: 120px;
     font-weight: 300;
     @media (max-width: $xxxl) {
       font-size: 52px;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
     @media (max-width: $md) {
       font-size: 35px;
-      margin-bottom: 20px;
     }
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
   }
-  &__description{
+  &__description {
     margin-bottom: 60px;
     max-width: 1135px;
     font-size: 40px;
@@ -39,26 +50,26 @@
     @media (max-width: $md) {
       margin-bottom: 20px;
     }
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
   }
-  &__footer{
+  &__footer {
     display: flex;
     flex-wrap: wrap;
   }
-  &__cta-wrap{
+  &__cta-wrap {
     margin-right: 119px;
     margin-bottom: 50px;
     @media (max-width: $xxxl) {
       margin-right: 40px;
       margin-bottom: 30px;
     }
-    &:last-child{
+    &:last-child {
       margin-right: 0;
     }
   }
-  &__cities{
+  &__cities {
     display: flex;
     align-items: center;
     margin-right: 119px;
@@ -72,7 +83,7 @@
       max-width: unset;
     }
   }
-  &__technologies-list{
+  &__technologies-list {
     display: flex;
     align-items: center;
     margin-right: 119px;
@@ -81,17 +92,17 @@
       margin-right: 40px;
       margin-bottom: 30px;
     }
-    .tags{
-      &__item{
+    .tags {
+      &__item {
         margin-right: 23px;
         @media (max-width: $xxxl) {
           margin-right: 10px;
         }
-        &:last-child{
+        &:last-child {
           margin-right: 0;
         }
       }
-      &__img{
+      &__img {
         height: 70px;
         @media (max-width: $xxxl) {
           height: 35px;
@@ -99,7 +110,7 @@
       }
     }
   }
-  &__logo-wrap{
+  &__logo-wrap {
     margin-left: auto;
     margin-bottom: 50px;
     display: flex;
@@ -108,10 +119,14 @@
       margin-bottom: 30px;
     }
   }
-  &__logo{
-    height: 54px;
+  &__logo {
+    max-height: 54px;
+    max-width: 240px;
+    width: auto;
+    height: auto;
     @media (max-width: $xxxl) {
-      height: 45px;
+      max-height: 45px;
+      max-width: 140px;
     }
   }
 }

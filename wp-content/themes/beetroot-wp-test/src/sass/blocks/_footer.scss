@@ -114,6 +114,12 @@
       }
     }
   }
+  a{
+    transition: color .3s ease-in-out;
+    &:hover{
+      color: $color-7;
+    }
+  }
 }
 
 .socials-list {

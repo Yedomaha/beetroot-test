@@ -42,7 +42,8 @@ $locations_drop_down_modifier = ( $job_locations && count( $job_locations ) > 0 
 
 
 /*Job posts query*/
-$posts_per_page = get_option( 'posts_per_page' );
+//$posts_per_page = get_option( 'posts_per_page' );
+$posts_per_page = 6;
 
 if ( get_query_var( 'paged' ) ) {
 	$paged = get_query_var( 'paged' );

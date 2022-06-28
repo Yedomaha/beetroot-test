@@ -1,20 +1,34 @@
 <?php get_header();
 
-$logo            = get_field( 'logo' );
+$logo            = get_field( 'client_logo' );
 $job_type        = get_field( 'job_type' );
+$job_hot         = get_field( 'hot' );
 $job_description = get_field( 'job_description' );
 
 $job_cities      = get_the_terms( $post->ID, 'job_locations' );
 $job_cities_list = get_terms_string( $job_cities, ' & ' );
 
-$job_technologies = get_the_terms( $post->ID, 'job_technologies' );
+$job_technologies = get_the_terms( get_the_ID(), 'job_technologies' );
+
+if($job_type === '1'){
+	$job_locations = get_the_terms( get_the_ID(), 'job_locations' );
+	$locations_to_show = get_terms_string( $job_cities, ' & ' );
+} else{
+	$job_locations_academy = get_the_terms( get_the_ID(), 'job_locations_academy' );
+	$locations_to_show = get_terms_string( $job_locations_academy, ' & ' );
+}
 
 ?>
 
 <section class="job-hero">
     <div class="container container--sm">
         <div class="job-hero__inner">
-            <h1 class="job-hero__title"><?php the_title(); ?></h1>
+            <div class="job-hero__title-wrap">
+                <h1 class="job-hero__title"><?php the_title(); ?></h1>
+				<?php if ( $job_hot ): ?>
+                    <span class="hot-label hot-label--2"><?php _e( 'Hot', 'beetroot-wp-test' ) ?></span>
+				<?php endif; ?>
+            </div>
 
 			<?php if ( ! empty( $job_description ) ): ?>
 
@@ -25,13 +39,13 @@ $job_technologies = get_the_terms( $post->ID, 'job_technologies' );
 
             <div class="job-hero__footer">
                 <div class="job-hero__cta-wrap">
-                    <a href="#apply"
+                    <a data-anchor href="#apply"
                        class="job-hero__cta default-cta default-cta--red"><?php _e( 'Apply now', 'beetroot-wp-test' ) ?></a>
                 </div>
 
-				<?php if ( ! empty( $job_cities_list ) ): ?>
+				<?php if ( ! empty( $locations_to_show ) ): ?>
 
-                    <div class="job-hero__cities"><?php echo $job_cities_list ?></div>
+                    <div class="job-hero__cities"><?php echo $locations_to_show ?></div>
 
 				<?php endif; ?>
 

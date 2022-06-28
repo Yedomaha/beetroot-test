@@ -10,8 +10,8 @@
 [data-filter-load-more] {
   opacity: 1;
   pointer-events: all;
-  text-decoration: underline;
-  color: #000000;
+  //text-decoration: underline;
+  color: $color-3;
   &:hover {
     opacity: .7;
   }
@@ -31,9 +31,9 @@
   width: 50px;
   height: 50px;
   position: absolute;
-  border: .3em solid transparent;
-  border-left-color: #c73442;
-  border-right-color: #c73442;
+  border: .2em solid transparent;
+  border-left-color: $color-3;
+  border-right-color: $color-3;
   border-radius: 50%;
   animation: 3s loader linear infinite;
 }
@@ -69,7 +69,14 @@
 
 .noPostsText {
   padding: 20px;
-  color: #000;
+  color: $color-3;
   width: 100%;
   text-align: center;
+}
+
+.filter-disabled{
+  cursor: progress;
+  .tags-list, .search-bar__drop-down-col{
+    pointer-events: none!important;
+  }
 }

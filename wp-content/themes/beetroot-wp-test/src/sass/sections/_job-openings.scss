@@ -6,7 +6,7 @@
       padding: 75px 0;
     }
     @media (max-width: $lg) {
-      padding: 35px 0;
+      padding: 45px 0;
     }
   }
   &__title-area {
@@ -56,6 +56,9 @@
 }
 
 .job-filter {
+  &__grid-wrap {
+    position: relative;
+  }
   &__grid {
     display: flex;
     flex-wrap: wrap;
@@ -123,8 +126,16 @@
       width: 10%;
     }
   }
-  &__load-more-wrap{
+  &__load-more-wrap {
     text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    @media (max-width: $md) {
+      padding: 0;
+    }
   }
 }
 
@@ -470,20 +481,21 @@
     border-radius: 100px;
     overflow: hidden;
     cursor: pointer;
+    user-select: none;
     @media (max-width: $xxxl) {
       padding: 0 10px;
       height: 30px;
       line-height: 28px;
       border-width: 1px;
     }
-    &.active, &:hover {
+    &.active {
       border-color: $color-3;
       background-color: $color-3;
       color: $color-2;
     }
-    &:hover .tags-list__item-name {
-      color: $color-2;
-    }
+    //&:hover .tags-list__item-name {
+    //  color: $color-2;
+    //}
   }
   &__item-name {
     color: $color-1;
@@ -652,9 +664,11 @@
     align-items: flex-end;
     padding-top: 15px;
     font-size: 36px;
+    line-height: 41px;
     font-weight: 400;
     @media (max-width: $xxxl) {
       font-size: 19px;
+      line-height: 24px;
     }
     .job-filter__grid-wrap--list & {
       padding-top: 0;
@@ -679,6 +693,9 @@
       transition: color .3s ease-in-out;
       &:hover {
         color: $color-3;
+        .green-style &{
+          color: $color-10;
+        }
       }
     }
   }
@@ -787,6 +804,15 @@
       background-size: 34px 7px;
       padding-right: 35px;
     }
+    .green-style & {
+      color: $color-10;
+      background: url("../img/cta-arrow-green.svg") no-repeat 100% 50%;
+      background-size: 57px 11px;
+      @media (max-width: $xxxl) {
+        background-size: 34px 7px;
+        padding-right: 35px;
+      }
+    }
   }
 
   &__locations {
@@ -875,6 +901,9 @@
     @media (max-width: $xxxl) {
       padding: 0 12px;
     }
+    .green-style & {
+      background-color: $color-10;
+    }
   }
   &__info-text {
     font-size: 24px;
@@ -904,6 +933,9 @@
       border-right: 10px solid transparent;
       border-top: 10px solid $color-3;
     }
+    .green-style & {
+      border-top-color: $color-10;
+    }
   }
   &__img {
     display: block;
@@ -911,5 +943,26 @@
     @media (max-width: $xxxl) {
       height: 30px;
     }
+  }
+}
+
+.hot-label {
+  font-size: 22px;
+  display: inline-block;
+  padding: 0 14px;
+  position: relative;
+  background-color: rgba(188, 32, 75, 0.1);
+  color: $color-3;
+  border-radius: 50px;
+  top: -2px;
+  &--2 {
+    padding: 8px 14px;
+  }
+  @media (max-width: $xxxl) {
+    font-size: 11px;
+  }
+  .green-style &{
+    color: $color-10;
+    background-color: rgba(123, 206, 177, 0.1);
   }
 }

@@ -17,7 +17,7 @@ export default () => {
     const ajaxURL = filterGrid.getAttribute('data-ajax-url');
     const postsPerPage = filterGrid.getAttribute('data-posts-per-page');
 
-    let searchInputTimer;
+    let timer;
     let searchInputLastValue;
     let page = 1;
     let data = {action: 'jobs_filter_ajax', page, postsPerPage};
@@ -120,7 +120,7 @@ export default () => {
         let locationsOfficeArr = [];
         let locationsAcademyArr = [];
         let technologiesArr = [];
-        let paramsString;
+        let paramsString = '';
 
         if (activeCheckboxes && activeCheckboxes.length > 0) {
             activeCheckboxes.forEach((item) => {
@@ -200,6 +200,7 @@ export default () => {
                 noPostsStatusOff();
                 insertPost(posts);
                 setButtonStatus(false);
+                loadMoreActivation();
             } else {
                 setButtonStatus(false);
                 hideButton();
@@ -234,6 +235,7 @@ export default () => {
             if (posts && posts.trim() !== '') {
                 insertPost(posts);
                 setButtonStatus(false);
+                loadMoreActivation();
             } else {
                 setButtonStatus(false);
                 hideButton();
@@ -265,7 +267,6 @@ export default () => {
     };
 
     const updateUrlParams = (paramsString) => {
-        if (!paramsString) return;
         let urlParams = window.location.protocol + "//" + window.location.host + window.location.pathname + paramsString;
         window.history.pushState({path: urlParams}, '', urlParams);
     };
@@ -373,24 +374,46 @@ export default () => {
         }
     };
 
+    const loadMoreActivation = () =>{
+        if (isStatusLoading) return;
+        let x = window.innerHeight - 50;
+        let loadMorePos = loadMoreButton.getBoundingClientRect().top;
+        if(x >= loadMorePos && !loadMoreButton.classList.contains('hide')){
+            loadMoreClick();
+        }
+    };
+
+
     /*Triggers logic*/
 
     filterCheckboxes.forEach((item) => {
         item.addEventListener('change', (e) => {
             filterChange(e);
+
+            // let keyPause = 500;
+            // clearTimeout(timer);
+            // timer = setTimeout(function () {
+            //     filterChange(e);
+            // }, keyPause);
         });
     });
     filterButtons.forEach((item) => {
         item.addEventListener('click', (e) => {
             item.classList.toggle('active');
             filterChange(e);
+
+            // let keyPause = 500;
+            // clearTimeout(timer);
+            // timer = setTimeout(function () {
+            //     filterChange(e);
+            // }, keyPause);
         });
     });
     filterSearchInput.addEventListener('keyup', (e) => {
         let keyPause = 500;
         if (filterSearchInput.value.length < 3) return;
-        clearTimeout(searchInputTimer);
-        searchInputTimer = setTimeout(checkLastVal, keyPause);
+        clearTimeout(timer);
+        timer = setTimeout(checkLastVal, keyPause);
 
         function checkLastVal() {
             if (searchInputLastValue !== filterSearchInput.value) {
@@ -407,6 +430,11 @@ export default () => {
     });
 
     /*todo:*/
+
+    window.addEventListener('scroll', throttle(function () {
+        loadMoreActivation();
+    }, 100));
+
     loadMoreButton.addEventListener('click', loadMoreClick);
 
     filterFromUrlParams();

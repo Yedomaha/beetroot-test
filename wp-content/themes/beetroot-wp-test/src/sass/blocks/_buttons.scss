@@ -25,6 +25,15 @@
       border: 2px solid $color-3;
     }
   }
+  &--green{
+    color: $color-2;
+    background-color: $color-10;
+    border-color:$color-10;
+    &:hover {
+      color: $color-10;
+      background-color: $color-2;
+    }
+  }
 }
 
 /*

@@ -27,6 +27,25 @@
             "mime_types": ""
         },
         {
+            "key": "field_62bade01c391d",
+            "label": "Hot",
+            "name": "hot",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_62ab855e0055f",
             "label": "Job type",
             "name": "job_type",
@@ -88,5 +107,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1656033005
+    "modified": 1656419730
 }
