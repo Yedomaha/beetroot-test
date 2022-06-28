@@ -12,7 +12,7 @@ $header_nav  = $header['navigation'];
 			<?php if ( ! empty( $header_logo ) ): ?>
 
                 <div class="header__logo">
-                    <img <?php echo getImageAttributesById( $header_logo['id'], 300 ); ?>>
+                    <img <?php echo beetrootTestClass::get_image_attributes_by_id( $header_logo['id'], 300 ); ?>>
                     <a href="<?php echo get_home_url() ?>"></a>
                 </div>
 

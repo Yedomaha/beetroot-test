@@ -67,7 +67,7 @@ function jobs_filter_ajax() {
 	if ( $posts->have_posts() ) {
 		while ( $posts->have_posts() ) {
 			$posts->the_post();
-			$posts_html = $posts_html . load_template_part( "template-parts/loop/cpt-item" );
+			$posts_html = $posts_html . beetrootTestClass::load_template_part( "template-parts/loop/cpt-item" );
 		}
 		wp_reset_postdata();
 	};

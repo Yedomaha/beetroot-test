@@ -6,7 +6,7 @@ $job_hot         = get_field( 'hot' );
 $job_description = get_field( 'job_description' );
 
 $job_departments      = get_the_terms( get_the_ID(), 'job_departments' );
-$job_departments_list = get_terms_string( $job_departments, ', ' );
+$job_departments_list = beetrootTestClass::get_terms_string( $job_departments, ', ' );
 
 $job_technologies = get_the_terms( get_the_ID(), 'job_technologies' );
 
@@ -14,12 +14,12 @@ $job_technologies = get_the_terms( get_the_ID(), 'job_technologies' );
 if ( $job_type === '1' ) {
 	$job_type_modifier  = false;
 	$job_locations      = get_the_terms( get_the_ID(), 'job_locations' );
-	$locations_to_show  = get_terms_string( $job_locations, ', ' );
+	$locations_to_show  = beetrootTestClass::get_terms_string( $job_locations, ', ' );
 	$icon_args['color'] = '#bc204b';
 } else {
 	$job_type_modifier     = 'green-style';
 	$job_locations_academy = get_the_terms( get_the_ID(), 'job_locations_academy' );
-	$locations_to_show     = get_terms_string( $job_locations_academy, ', ' );
+	$locations_to_show     = beetrootTestClass::get_terms_string( $job_locations_academy, ', ' );
 	$icon_args['color']    = '#7bceb1';
 }
 ?>
@@ -35,7 +35,7 @@ if ( $job_type === '1' ) {
 			<?php if ( ! empty( $client_logo ) ): ?>
 
                 <div class="cpt-item__logo-wrap">
-                    <img <?php echo getImageAttributesById( $client_logo['id'], 500 ); ?>>
+                    <img <?php echo beetrootTestClass::get_image_attributes_by_id( $client_logo['id'], 500 ); ?>>
                 </div>
 
 			<?php endif; ?>
@@ -76,7 +76,7 @@ if ( $job_type === '1' ) {
 						<?php
 						$item_icon    = get_field( 'icon', $item );
 						$icon_svg_code = get_field( 'icon_svg_code', $item );
-						$item_icon_id = checkImg( $item_icon );
+						$item_icon_id = beetrootTestClass::get_img_id_from_arr( $item_icon );
 						?>
 
 						<?php if ( $i < 3 ): ?>
@@ -99,7 +99,7 @@ if ( $job_type === '1' ) {
                                         <span class="tags__info-text"><?php echo $item->name ?></span>
                                         <div class="tags__info-arrow"></div>
                                     </div>
-                                    <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?> class="tags__img">
+                                    <img <?php echo beetrootTestClass::get_image_attributes_by_id( $item_icon_id, 300 ); ?> class="tags__img">
                                 </li>
 
 							<?php endif; ?>
@@ -122,7 +122,7 @@ if ( $job_type === '1' ) {
 					<?php
 					$item_icon     = get_field( 'icon', $item );
 					$icon_svg_code = get_field( 'icon_svg_code', $item );
-					$item_icon_id  = checkImg( $item_icon );
+					$item_icon_id  = beetrootTestClass::get_img_id_from_arr( $item_icon );
 					?>
 
 					<?php if ( $i < 3 ): ?>
@@ -145,7 +145,7 @@ if ( $job_type === '1' ) {
                                     <span class="tags__info-text"><?php echo $item->name ?></span>
                                     <div class="tags__info-arrow"></div>
                                 </div>
-                                <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?> class="tags__img">
+                                <img <?php echo beetrootTestClass::get_image_attributes_by_id( $item_icon_id, 300 ); ?> class="tags__img">
                             </li>
 
 						<?php endif; ?>
@@ -161,7 +161,7 @@ if ( $job_type === '1' ) {
 
 			<?php if ( ! empty( $client_logo ) ): ?>
 
-                <img <?php echo getImageAttributesById( $client_logo['id'], 500 ); ?>>
+                <img <?php echo beetrootTestClass::get_image_attributes_by_id( $client_logo['id'], 500 ); ?>>
 
 			<?php endif; ?>
 

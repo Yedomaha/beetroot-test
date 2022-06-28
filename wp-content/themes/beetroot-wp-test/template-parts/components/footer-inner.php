@@ -83,7 +83,7 @@ $socials            = $footer['socials'];
 							?>
 
                             <li class="socials-list__item">
-                                <img class="socials-list__icon" <?php echo getImageAttributesById( $socials_icon['id'], 200 ); ?>>
+                                <img class="socials-list__icon" <?php echo beetrootTestClass::get_image_attributes_by_id( $socials_icon['id'], 200 ); ?>>
                                 <a href="<?php echo $socials_link['url'] ?>"
                                    target="<?php echo $socials_link['target'] ?>"></a>
                             </li>

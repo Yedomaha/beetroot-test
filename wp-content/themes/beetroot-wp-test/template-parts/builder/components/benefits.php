@@ -30,7 +30,7 @@ $benefits_list = get_field( 'benefits_list' );
 							<?php if ( ! empty( $item_icon ) ): ?>
 
                                 <div class="benefits__icon-wrap">
-                                    <img class="benefits__icon" <?php echo getImageAttributesById( $item_icon['id'], 400 ); ?>>
+                                    <img class="benefits__icon" <?php echo beetrootTestClass::get_image_attributes_by_id( $item_icon['id'], 400 ); ?>>
                                 </div>
 
 							<?php endif; ?>
