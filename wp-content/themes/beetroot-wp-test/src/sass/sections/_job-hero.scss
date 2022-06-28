@@ -102,10 +102,12 @@
           margin-right: 0;
         }
       }
-      &__img {
+      &__img, svg {
         height: 70px;
+        width: 70px;
         @media (max-width: $xxxl) {
           height: 35px;
+          width: 35px;
         }
       }
     }

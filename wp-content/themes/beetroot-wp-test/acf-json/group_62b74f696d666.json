@@ -3,11 +3,30 @@
     "title": "Technologies",
     "fields": [
         {
+            "key": "field_62bb415a6dbfe",
+            "label": "Icon (SVG code)",
+            "name": "icon_svg_code",
+            "type": "textarea",
+            "instructions": "SVG code has first priority",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
             "key": "field_62b74fbde87af",
-            "label": "Icon",
+            "label": "Icon (Image)",
             "name": "icon",
             "type": "image",
-            "instructions": "",
+            "instructions": "SVG image has second priority (will not be shown if the SVG code field is filled)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -45,5 +64,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1656180769
+    "modified": 1656439762
 }

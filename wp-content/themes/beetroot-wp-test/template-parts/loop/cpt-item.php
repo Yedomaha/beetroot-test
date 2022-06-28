@@ -1,9 +1,9 @@
 <?php
-$client_logo       = get_field( 'client_logo' );
-$title_modifier    = ! empty( $client_logo ) ? 'cpt-item__title--with-logo' : false;
-$job_type          = get_field( 'job_type' );
-$job_hot           = get_field( 'hot' );
-$job_description   = get_field( 'job_description' );
+$client_logo     = get_field( 'client_logo' );
+$title_modifier  = ! empty( $client_logo ) ? 'cpt-item__title--with-logo' : false;
+$job_type        = get_field( 'job_type' );
+$job_hot         = get_field( 'hot' );
+$job_description = get_field( 'job_description' );
 
 $job_departments      = get_the_terms( get_the_ID(), 'job_departments' );
 $job_departments_list = get_terms_string( $job_departments, ', ' );
@@ -11,16 +11,16 @@ $job_departments_list = get_terms_string( $job_departments, ', ' );
 $job_technologies = get_the_terms( get_the_ID(), 'job_technologies' );
 
 
-if($job_type === '1'){
-	$job_type_modifier = false;
-	$job_locations = get_the_terms( get_the_ID(), 'job_locations' );
-	$locations_to_show = get_terms_string( $job_locations, ', ' );
+if ( $job_type === '1' ) {
+	$job_type_modifier  = false;
+	$job_locations      = get_the_terms( get_the_ID(), 'job_locations' );
+	$locations_to_show  = get_terms_string( $job_locations, ', ' );
 	$icon_args['color'] = '#bc204b';
-} else{
-	$job_type_modifier = 'green-style';
+} else {
+	$job_type_modifier     = 'green-style';
 	$job_locations_academy = get_the_terms( get_the_ID(), 'job_locations_academy' );
-	$locations_to_show = get_terms_string( $job_locations_academy, ', ' );
-	$icon_args['color'] = '#7bceb1';
+	$locations_to_show     = get_terms_string( $job_locations_academy, ', ' );
+	$icon_args['color']    = '#7bceb1';
 }
 ?>
 
@@ -75,19 +75,36 @@ if($job_type === '1'){
 					foreach ( $job_technologies as $item ): ?>
 						<?php
 						$item_icon    = get_field( 'icon', $item );
+						$icon_svg_code = get_field( 'icon_svg_code', $item );
 						$item_icon_id = checkImg( $item_icon );
 						?>
-						<?php if ( $item_icon_id && $i < 3 ): $i ++ ?>
 
-                            <li class="tags__item">
-                                <div class="tags__info">
-                                    <span class="tags__info-text"><?php echo $item->name ?></span>
-                                    <div class="tags__info-arrow"></div>
-                                </div>
-                                <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?> class="tags__img">
-                            </li>
+						<?php if ( $i < 3 ): ?>
+							<?php if ( ! empty( $icon_svg_code ) ): $i ++ ?>
 
+                                <li class="tags__item">
+                                    <div class="tags__info">
+                                        <span class="tags__info-text"><?php echo $item->name ?></span>
+                                        <div class="tags__info-arrow"></div>
+                                    </div>
+									<?php echo $icon_svg_code ?>
+                                </li>
+
+
+							<?php elseif ( $item_icon_id ): $i ++ ?>
+
+
+                                <li class="tags__item">
+                                    <div class="tags__info">
+                                        <span class="tags__info-text"><?php echo $item->name ?></span>
+                                        <div class="tags__info-arrow"></div>
+                                    </div>
+                                    <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?> class="tags__img">
+                                </li>
+
+							<?php endif; ?>
 						<?php endif; ?>
+
 					<?php endforeach; ?>
 
                 </ul>
@@ -103,21 +120,37 @@ if($job_type === '1'){
 				<?php $i = 0;
 				foreach ( $job_technologies as $item ): ?>
 					<?php
-					$item_icon    = get_field( 'icon', $item );
-					$item_icon_id = checkImg( $item_icon );
+					$item_icon     = get_field( 'icon', $item );
+					$icon_svg_code = get_field( 'icon_svg_code', $item );
+					$item_icon_id  = checkImg( $item_icon );
 					?>
-					<?php if ( $item_icon_id && $i < 3 ): $i ++ ?>
+
+					<?php if ( $i < 3 ): ?>
+						<?php if ( ! empty( $icon_svg_code ) ): $i ++ ?>
+
+                            <li class="tags__item">
+                                <div class="tags__info">
+                                    <span class="tags__info-text"><?php echo $item->name ?></span>
+                                    <div class="tags__info-arrow"></div>
+                                </div>
+								<?php echo $icon_svg_code ?>
+                            </li>
 
 
-                        <li class="tags__item">
-                            <div class="tags__info">
-                                <span class="tags__info-text"><?php echo $item->name ?></span>
-                                <div class="tags__info-arrow"></div>
-                            </div>
-                            <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?> class="tags__img">
-                        </li>
+						<?php elseif ( $item_icon_id ): $i ++ ?>
 
+
+                            <li class="tags__item">
+                                <div class="tags__info">
+                                    <span class="tags__info-text"><?php echo $item->name ?></span>
+                                    <div class="tags__info-arrow"></div>
+                                </div>
+                                <img <?php echo getImageAttributesById( $item_icon_id, 300 ); ?> class="tags__img">
+                            </li>
+
+						<?php endif; ?>
 					<?php endif; ?>
+
 				<?php endforeach; ?>
 
             </ul>

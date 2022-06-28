@@ -891,15 +891,18 @@
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    padding: 0 24px;
+    padding: 0 18px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .05);
     color: $color-2;
     background-color: $color-3;
     border-radius: 100px;
     opacity: 0;
     transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+    text-align: center;
+    min-width: 100px;
     @media (max-width: $xxxl) {
-      padding: 0 12px;
+      padding: 0 8px;
+      min-width: 50px;
     }
     .green-style & {
       background-color: $color-10;
@@ -911,7 +914,7 @@
     line-height: 50px;
     font-weight: 400;
     @media (max-width: $xxxl) {
-      font-size: 12px;
+      font-size: 11px;
       height: 26px;
       line-height: 26px;
     }
@@ -937,11 +940,24 @@
       border-top-color: $color-10;
     }
   }
-  &__img {
+  &__img{
+    @include object-fit(cover)
+  }
+  &__img, svg {
     display: block;
     height: 60px;
+    width: 60px;
     @media (max-width: $xxxl) {
       height: 30px;
+      width: 30px;
+    }
+  }
+  svg{
+    path{
+      fill: $color-3;
+      .green-style & {
+        fill: $color-10;
+      }
     }
   }
 }
