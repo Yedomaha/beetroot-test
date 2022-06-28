@@ -1,8 +1,4 @@
-import axios from 'axios';
-import qs from 'qs';
-import throttle from 'lodash/throttle';
-
-export default () => {
+export default (axios, qs, throttle) => {
     const filterSection = document.querySelector('[data-filter-wrap]');
     const filterGrid = document.querySelector('[data-filter-grid]');
     const loadMoreButton = document.querySelector('[data-filter-load-more]');
@@ -207,7 +203,7 @@ export default () => {
                 noPostsStatusOn();
             }
         }).catch(() => {
-            console.log('catch 1');
+            // console.log('catch 1');
             hideButton();
         });
     };
@@ -241,7 +237,7 @@ export default () => {
                 hideButton();
             }
         }).catch(() => {
-            console.log('catch');
+            // console.log('catch');
             hideButton();
         });
     };
@@ -428,8 +424,6 @@ export default () => {
             searchInputLastValue = filterSearchInput.value;
         }
     });
-
-    /*todo:*/
 
     window.addEventListener('scroll', throttle(function () {
         loadMoreActivation();

@@ -1,4 +1,8 @@
 import gsap from 'gsap';
+import axios from 'axios';
+import qs from 'qs';
+import throttle from 'lodash/throttle';
+
 import applicationForm from './components/alication-form';
 import setMarginBottomToMain from './components/footer';
 import jobsFilter from './components/jobs-filter';
@@ -14,7 +18,7 @@ export default () => {
     setMarginBottomToMain();
     applicationForm();
     jobsFilter();
-    ajaxFilter();
+    ajaxFilter(axios, qs, throttle);
     dropDowns();
     langSwitcher();
     anchorLinks(gsap);

@@ -15,7 +15,6 @@ export default (gsap) => {
                     let headerHeight = header.offsetHeight;
                     offset.val = (document.documentElement && document.documentElement.scrollTop) ||
                         document.body.scrollTop || window.scrollY || window.pageYOffset;
-                    console.log(offset.val);
                     let distance = elOffsetY - headerHeight + offset.val;
                     let time = Math.min(Math.abs(distance / scollSpeed), maxScrollTime);
                     gsap.to(offset, {

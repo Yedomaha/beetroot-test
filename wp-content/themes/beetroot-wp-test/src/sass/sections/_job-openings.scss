@@ -192,9 +192,11 @@
     transition: border-color .3s ease-in-out;
     border-left-color: transparent;
     border-right-color: transparent;
+    @media (max-width: $xxxl) {
+      border-width: 1px;
+    }
     @media (max-width: $lg) {
       width: 50%;
-      border-width: 1px;
     }
     &:nth-child(2) {
       @media (max-width: $lg) {
@@ -262,10 +264,10 @@
     @media (max-width: $xxxl) {
       padding: 0 68px;
       font-size: 19px;
+      border-width: 1px;
     }
     @media (max-width: $lg) {
       border-radius: 100px;
-      border-width: 1px;
     }
     &:focus {
       border-color: $color-3;
