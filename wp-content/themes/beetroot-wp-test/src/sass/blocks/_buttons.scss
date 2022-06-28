@@ -1,3 +1,7 @@
+/*
+Default buttons
+*/
+
 .default-cta {
   font-size: 30px;
   display: inline-block;
@@ -35,6 +39,7 @@
     }
   }
 }
+
 
 /*
 Custom checkboxes
@@ -84,7 +89,7 @@ Custom checkboxes
 }
 
 .checkbox:hover .checkbox__input ~ .checkbox__span {
-  //background-color: #ccc;
+
 }
 
 .checkbox .checkbox__input:checked ~ .checkbox__span {
@@ -121,7 +126,10 @@ Custom checkboxes
   }
 }
 
-/* Burger button */
+
+/*
+Burger button
+*/
 
 .burger-btn {
   width: 30px;

@@ -20,21 +20,6 @@ function my_acf_google_map_api( $api ){
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
-//Hide ACF specific class
-function hide_acf_class()
-{
-    ?>
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            jQuery(".hide_acf_field").css("display", "none");
-            ;
-        });
-    </script>
-    <?php
-}
-
-add_action('acf/input/admin_footer', 'hide_acf_class');
-
 /**
  * Remove p tags from images, scripts, links, and iframes. (ACF)
  */

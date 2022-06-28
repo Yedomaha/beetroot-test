@@ -19,7 +19,7 @@ function register_acf_blocks_types(){
 		'title' => __('Benefits'),
 		'render_template' => "/template-parts/builder/components/benefits.php",
 		'category' => 'common',
-		'icon' => 'editor-paste-word',
+		'icon' => 'star-empty',
 		'post_type' => array('jobs'),
 		'keywords' => array('job', 'jobs', 'offers', 'job-opening', 'opening', 'vacancies', 'vacancy'),
 	));

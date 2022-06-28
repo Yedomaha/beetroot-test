@@ -112,13 +112,9 @@ add_action( 'after_setup_theme', 'translations' );
  * Css/Js includes
  */
 function enqueue_css() {
-//	$css_frontend_ver = filemtime( get_template_directory() . '/dist/css/frontend.css' );
-//	$css_backend_ver = filemtime( get_template_directory() . '/dist/css/backend.css' );
 	$app_css_ver = filemtime( get_template_directory() . '/dist/css/app.css' );
 
 	wp_enqueue_style( 'css_style', get_stylesheet_uri(), array(), '' );
-//	wp_enqueue_style( 'frontend', get_template_directory_uri() . '/dist/css/frontend.css', '', $css_frontend_ver );
-//	wp_enqueue_style( 'backend', get_template_directory_uri() . '/dist/css/backend.css', '', $css_backend_ver );
 	wp_enqueue_style( 'app_css', get_template_directory_uri() . '/dist/css/app.css', '', $app_css_ver );
 }
 
@@ -138,25 +134,7 @@ add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
  * app.post_type
  */
 function enqueue_app_js() {
-//	$js_backend_ver = filemtime( get_template_directory() . '/dist/js/backend.js' );
-//	$js_frontend_ver = filemtime( get_template_directory() . '/dist/js/frontend.js' );
 	$app_js_ver = filemtime( get_template_directory() . '/dist/js/app.js' );
-
-//	wp_enqueue_script( 'backend', get_template_directory_uri() . '/dist/js/backend.js', '', $js_backend_ver, true );
-//	wp_localize_script( 'backend', 'app', array(
-//		'ajax_url'  => admin_url( 'admin-ajax.php' ),
-//		'post_type' => get_post_type(),
-//		'nonce'     => wp_create_nonce( 'app-nonce' ),
-//		'user_id'   => get_current_user_id()
-//	) );
-//
-//	wp_enqueue_script( 'frontend', get_template_directory_uri() . '/dist/js/frontend.js', '', $js_frontend_ver, true );
-//	wp_localize_script( 'frontend', 'app', array(
-//		'ajax_url'  => admin_url( 'admin-ajax.php' ),
-//		'post_type' => get_post_type(),
-//		'nonce'     => wp_create_nonce( 'app-nonce' ),
-//		'user_id'   => get_current_user_id()
-//	) );
 
 	wp_enqueue_script( 'app_js', get_template_directory_uri() . '/dist/js/app.js', '', $app_js_ver, true );
 	wp_localize_script( 'app_js', 'app', array(
