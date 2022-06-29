@@ -61,30 +61,30 @@ if ( $job_type === '1' ) {
 							$item_icon_id  = beetrootTestClass::get_img_id_from_arr( $item_icon );
 							?>
 
-								<?php if ( ! empty( $icon_svg_code ) ): $i ++ ?>
+							<?php if ( ! empty( $icon_svg_code ) ): ?>
 
-                                    <li class="tags__item">
-                                        <div class="tags__info">
-                                            <span class="tags__info-text"><?php echo $item->name ?></span>
-                                            <div class="tags__info-arrow"></div>
-                                        </div>
-										<?php echo $icon_svg_code ?>
-                                    </li>
-
-
-								<?php elseif ( $item_icon_id ): $i ++ ?>
+                                <li class="tags__item">
+                                    <div class="tags__info">
+                                        <span class="tags__info-text"><?php echo $item->name ?></span>
+                                        <div class="tags__info-arrow"></div>
+                                    </div>
+									<?php echo $icon_svg_code ?>
+                                </li>
 
 
-                                    <li class="tags__item">
-                                        <div class="tags__info">
-                                            <span class="tags__info-text"><?php echo $item->name ?></span>
-                                            <div class="tags__info-arrow"></div>
-                                        </div>
-                                        <img <?php echo beetrootTestClass::get_image_attributes_by_id( $item_icon_id, 300 ); ?>
-                                                class="tags__img">
-                                    </li>
+							<?php elseif ( $item_icon_id ): ?>
 
-								<?php endif; ?>
+
+                                <li class="tags__item">
+                                    <div class="tags__info">
+                                        <span class="tags__info-text"><?php echo $item->name ?></span>
+                                        <div class="tags__info-arrow"></div>
+                                    </div>
+                                    <img <?php echo beetrootTestClass::get_image_attributes_by_id( $item_icon_id, 300 ); ?>
+                                            class="tags__img">
+                                </li>
+
+							<?php endif; ?>
 
 						<?php endforeach; ?>
 
@@ -92,7 +92,7 @@ if ( $job_type === '1' ) {
 
 				<?php endif; ?>
 
-				<?php if ( ! empty( $logo ) ): ?>
+				<?php if ( ! empty( $logo ) && is_array( $logo ) ): ?>
 
                     <div class="job-hero__logo-wrap">
                         <img class="job-hero__logo" <?php echo beetrootTestClass::get_image_attributes_by_id( $logo['id'], 500 ); ?>>
