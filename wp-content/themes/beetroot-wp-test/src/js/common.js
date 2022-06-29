@@ -11,6 +11,7 @@ import burgerMenu from './components/burger-menu';
 import dropDowns from './components/drop-downs';
 import langSwitcher from './components/lang-switcher';
 import anchorLinks from './components/anchor-links';
+import subscribeForm from './components/subscribe-form';
 
 export default () => {
 
@@ -22,5 +23,6 @@ export default () => {
     dropDowns();
     langSwitcher();
     anchorLinks(gsap);
+    subscribeForm();
 
 }

@@ -4,7 +4,6 @@ html, body {
   font-weight: 300;
   color: $color-1;
 
-
   @media (max-width: $xxxl) {
     font-size: 16px;
   }
@@ -22,7 +21,7 @@ html, body {
   }
 }
 
-main{
+main {
   padding-top: 160px;
   background-color: #fff;
   position: relative;
@@ -32,7 +31,7 @@ main{
   }
   @media (max-width: $lg) {
     padding-top: 60px;
-    margin-bottom: 0!important;
+    margin-bottom: 0 !important;
   }
 }
 
@@ -47,6 +46,12 @@ img, video {
 
 button, a, [class*=button], [class*=btn], [class*=link] {
   //cursor: pointer;
+}
+
+a {
+  &:focus-visible {
+    outline: thick double $color-7;
+  }
 }
 
 .title {

@@ -238,5 +238,31 @@
   }
   &__form-message {
     display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: calc(100% + 10px);
+    font-weight: 400;
+    font-size: 20px;
+    @media (max-width: $xxxl) {
+      top: calc(100% + 5px);
+      font-size: 12px;
+    }
+    @media (max-width: $md) {
+      text-align: center;
+      font-size: 10px;
+    }
+    &--success{
+      color: $color-9;
+      .success &{
+        display: block;
+      }
+    }
+    &--error{
+      color: $color-2;
+      .error &{
+        display: block;
+      }
+    }
   }
 }
