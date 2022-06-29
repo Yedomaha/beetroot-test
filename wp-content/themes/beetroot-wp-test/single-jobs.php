@@ -54,15 +54,13 @@ if ( $job_type === '1' ) {
 
                     <ul class="job-hero__technologies-list tags">
 
-						<?php $i = 0;
-						foreach ( $job_technologies as $item ): ?>
+						<?php foreach ( $job_technologies as $item ): ?>
 							<?php
 							$item_icon     = get_field( 'icon', $item );
 							$icon_svg_code = get_field( 'icon_svg_code', $item );
 							$item_icon_id  = beetrootTestClass::get_img_id_from_arr( $item_icon );
 							?>
 
-							<?php if ( $i < 3 ): ?>
 								<?php if ( ! empty( $icon_svg_code ) ): $i ++ ?>
 
                                     <li class="tags__item">
@@ -87,7 +85,6 @@ if ( $job_type === '1' ) {
                                     </li>
 
 								<?php endif; ?>
-							<?php endif; ?>
 
 						<?php endforeach; ?>
 
