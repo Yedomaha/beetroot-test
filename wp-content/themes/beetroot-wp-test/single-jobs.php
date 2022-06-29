@@ -10,12 +10,12 @@ $job_cities_list = beetrootTestClass::get_terms_string( $job_cities, ' & ' );
 
 $job_technologies = get_the_terms( get_the_ID(), 'job_technologies' );
 
-if($job_type === '1'){
-	$job_locations = get_the_terms( get_the_ID(), 'job_locations' );
+if ( $job_type === '1' ) {
+	$job_locations     = get_the_terms( get_the_ID(), 'job_locations' );
 	$locations_to_show = beetrootTestClass::get_terms_string( $job_cities, ' & ' );
-} else{
+} else {
 	$job_locations_academy = get_the_terms( get_the_ID(), 'job_locations_academy' );
-	$locations_to_show = beetrootTestClass::get_terms_string( $job_locations_academy, ' & ' );
+	$locations_to_show     = beetrootTestClass::get_terms_string( $job_locations_academy, ' & ' );
 }
 
 ?>
@@ -50,15 +50,16 @@ if($job_type === '1'){
 				<?php endif; ?>
 
 
-	            <?php if ( $job_technologies && count( $job_technologies ) > 0 ): ?>
+				<?php if ( $job_technologies && count( $job_technologies ) > 0 ): ?>
 
                     <ul class="job-hero__technologies-list tags">
 
-						<?php foreach ( $job_technologies as $item ): ?>
+						<?php $i = 0;
+						foreach ( $job_technologies as $item ): ?>
 							<?php
-							$item_icon    = get_field( 'icon', $item );
+							$item_icon     = get_field( 'icon', $item );
 							$icon_svg_code = get_field( 'icon_svg_code', $item );
-							$item_icon_id = beetrootTestClass::get_img_id_from_arr( $item_icon );
+							$item_icon_id  = beetrootTestClass::get_img_id_from_arr( $item_icon );
 							?>
 
 							<?php if ( $i < 3 ): ?>
@@ -81,7 +82,8 @@ if($job_type === '1'){
                                             <span class="tags__info-text"><?php echo $item->name ?></span>
                                             <div class="tags__info-arrow"></div>
                                         </div>
-                                        <img <?php echo beetrootTestClass::get_image_attributes_by_id( $item_icon_id, 300 ); ?> class="tags__img">
+                                        <img <?php echo beetrootTestClass::get_image_attributes_by_id( $item_icon_id, 300 ); ?>
+                                                class="tags__img">
                                     </li>
 
 								<?php endif; ?>
