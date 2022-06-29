@@ -1,7 +1,7 @@
 .benefits{
   background-color: $color-4;
   &__inner{
-    padding: 190px 0 136px;
+    padding: 184px 0 112px;
     @media (max-width: $xxxl) {
       padding: 75px 0 55px;
     }
@@ -10,7 +10,7 @@
     }
   }
   &__title{
-    margin-bottom: 100px;
+    margin-bottom: 84px;
     font-size: 70px;
     font-weight: 300;
     line-height: (90/70);
@@ -69,7 +69,7 @@
     display: flex;
     align-items: center;
     width: calc(100% - 122px);
-    padding-left: 40px;
+    padding-left: 44px;
     @media (max-width: $xxxl) {
       width: calc(100% - 60px);
       padding-left: 20px;

@@ -95,17 +95,17 @@ $socials            = $footer['socials'];
 				<?php endif; ?>
 
                 <div class="subscribe footer__subscribe">
-                    <h6 class="subscribe__title">subscribe to news</h6>
+                    <h6 class="subscribe__title"><?php _e('subscribe to news','beetroot-wp-test') ?></h6>
                     <form class="subscribe__form"
                           action="https://beetroot.us12.list-manage.com/subscribe/post-json?u=566efbac8b30750fe9c9d744a&amp;id=04557f958e&amp;c=callback"
                           method="post" target="_blank">
-                        <input class="subscribe__form-input" type="email" name="EMAIL" placeholder="Enter Email Adress"
+                        <input class="subscribe__form-input" type="email" name="EMAIL" placeholder="Email Address"
                                required="">
                         <input class="subscribe__form-submit" type="submit" value="">
-                        <div class="subscribe__form-message subscribe__form-message--success">Thank you for
+                        <div class="subscribe__form-message subscribe__form-message--success"><?php _e('Thank you for','beetroot-wp-test') ?>
                             subscribing!
                         </div>
-                        <div class="subscribe__form-message subscribe__form-message--error">Something went wrong</div>
+                        <div class="subscribe__form-message subscribe__form-message--error"><?php _e('Something went wrong','beetroot-wp-test') ?></div>
                     </form>
                 </div>
             </div>

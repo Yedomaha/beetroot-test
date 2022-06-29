@@ -15,7 +15,7 @@
     transform-origin: 0 0;
   }
   &__inner {
-    padding: 119px 0 216px;
+    padding: 186px 0 173px;
     @media (max-width: $xxxl) {
       padding: 75px 0;
     }
@@ -62,7 +62,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin: 91px 0 46px;
+    margin: 69px 0 27px;
     font-weight: 300;
     line-height: (90/70);
     @media (max-width: $xxxl) {
@@ -139,12 +139,10 @@
     li {
       position: relative;
       padding-left: 41px;
-      margin-bottom: 10px;
       font-size: 34px;
       font-weight: 300;
       line-height: (50/34);
       @media (max-width: $xxxl) {
-        margin-bottom: 5px;
         padding-left: 20px;
         font-size: 18px;
       }

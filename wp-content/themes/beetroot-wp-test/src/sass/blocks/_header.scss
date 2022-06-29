@@ -19,7 +19,7 @@
     }
   }
   &__logo {
-    margin-right: 49px;
+    margin-right: 46px;
     position: relative;
     @media (max-width: $xxxl) {
       margin-right: 22px;
@@ -125,7 +125,7 @@
   &__current-lang {
     cursor: pointer;
     position: relative;
-    padding-right: 38px;
+    padding-right: 30px;
     @media (max-width: $xxxl) {
       padding-right: 20px;
     }
@@ -196,9 +196,10 @@
         color: $color-2;
       }
       li {
-        letter-spacing: 1.88px;
-        margin-right: 39px;
+        letter-spacing: .85px;
+        margin-right: 33px;
         @media (max-width: $xxxl) {
+          letter-spacing: normal;
           margin-right: 16px;
         }
         @media (max-width: $lg) {

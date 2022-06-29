@@ -1,7 +1,7 @@
 .job-hero {
   background-color: $color-4;
   &__inner {
-    padding: 339px 0 170px;
+    padding: 162px 0 170px;
     @media (max-width: $xxxl) {
       padding: 75px 0;
     }
@@ -11,7 +11,7 @@
 
   }
   &__title-wrap {
-    margin-bottom: 56px;
+    margin-bottom: 51px;
     @media (max-width: $xxxl) {
       margin-bottom: 30px;
     }
@@ -38,7 +38,7 @@
     }
   }
   &__description {
-    margin-bottom: 60px;
+    margin-bottom: 51px;
     max-width: 1135px;
     font-size: 40px;
     line-height: (60/40);
@@ -69,12 +69,22 @@
       margin-right: 0;
     }
   }
+  &__cta.default-cta{
+    font-size: 35px;
+    padding: 36px 46px;
+    @media (max-width: $xxxl) {
+      font-size: 16px;
+      padding: 12px 22px;
+    }
+  }
   &__cities {
     display: flex;
     align-items: center;
     margin-right: 119px;
     margin-bottom: 50px;
+    font-size: 36px;
     @media (max-width: $xxxl) {
+      font-size: 20px;
       max-width: 60%;
       margin-right: 40px;
       margin-bottom: 30px;

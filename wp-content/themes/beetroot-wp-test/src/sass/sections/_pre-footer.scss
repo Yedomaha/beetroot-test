@@ -3,16 +3,13 @@
   padding: 129px 0;
   background-color: $color-2;
   @media (max-width: $xxxl){
-    padding-top: 80px;
-    padding-bottom: 100px;
+    padding: 80px 0 100px;
   }
   @media (max-width: $lg){
-    padding-top: 60px;
-    padding-bottom: 70px;
+    padding: 60px 0 70px;
   }
   @media (max-width: $md){
-    padding-top: 40px;
-    padding-bottom: 50px;
+    padding: 40px 0 50px;
   }
   &:before{
     content: '';
@@ -27,7 +24,17 @@
     transform-origin: 100% 100%;
   }
   &--gray{
+    padding: 167px 0;
     background-color: $color-4;
+    @media (max-width: $xxxl){
+      padding: 80px 0 100px;
+    }
+    @media (max-width: $lg){
+      padding: 60px 0 70px;
+    }
+    @media (max-width: $md){
+      padding: 40px 0 50px;
+    }
     &:before{
       background-color: $color-4;
     }

@@ -1,7 +1,7 @@
 .job-openings {
   background-color: $color-4;
   &__inner {
-    padding: 180px 0 220px;
+    padding: 162px 0 220px;
     @media (max-width: $xxxl) {
       padding: 75px 0;
     }
@@ -10,7 +10,7 @@
     }
   }
   &__title-area {
-    margin: 0 auto 80px;
+    margin: 0 auto 73px;
     width: 100%;
     max-width: 1359px;
     text-align: center;
@@ -26,12 +26,14 @@
     }
   }
   &__title {
-    margin-bottom: 83px;
+    margin-bottom: 49px;
     font-size: 90px;
     font-weight: 300;
     line-height: (110/90);
     color: $color-3;
+    letter-spacing: -2px;
     @media (max-width: $xxxl) {
+      letter-spacing: normal;
       margin-bottom: 40px;
       font-size: 45px;
     }
@@ -111,16 +113,16 @@
       font-size: 10px;
     }
     &:nth-child(1n) {
-      width: 30%;
+      width: 31.5%;
     }
     &:nth-child(2n) {
-      width: 18%;
+      width: 19.5%;
     }
     &:nth-child(3n) {
-      width: 16%;
+      width: 17%;
     }
     &:nth-child(4n) {
-      width: 26%;
+      width: 22%;
     }
     &:nth-child(5n) {
       width: 10%;
@@ -162,7 +164,7 @@
     }
   }
   &__input-wrap {
-    width: 50%;
+    width: 45%;
     @media (max-width: $lg) {
       width: 100%;
       margin-bottom: 10px;
@@ -185,7 +187,7 @@
     }
   }
   &__drop-down-wrap {
-    width: 25%;
+    width: 27.5%;
     position: relative;
     background-color: #fafaf8;
     border: 2px solid $color-6;
@@ -295,8 +297,8 @@
       display: block;
       background: url("../img/arrow-down.svg") no-repeat center/contain;
       position: absolute;
-      right: 50px;
-      top: calc(50% - 5px);
+      right: 45px;
+      top: 50%;
       transform: translateY(-50%);
       transition: transform .3s ease-in-out;
       @media (max-width: $xxxl) {
@@ -472,6 +474,7 @@
     }
     &:last-child {
       margin-left: auto;
+      margin-right: 0;
     }
   }
   &__btn {
@@ -600,8 +603,9 @@
     overflow: hidden;
     padding: 45px 50px;
     background-color: $color-2;
-    border-radius: 20px;
+    border-radius: 38px;
     @media (max-width: $xxxl) {
+      border-radius: 20px;
       padding: 24px;
     }
     .job-filter__grid-wrap--list & {
@@ -641,13 +645,13 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 45px;
+    margin-bottom: 36px;
     @media (max-width: $xxxl) {
       margin-bottom: 20px;
     }
     .job-filter__grid-wrap--list & {
       padding-right: 40px;
-      width: 30%;
+      width: 31.5%;
       margin: 0;
       align-items: center;
       @media (max-width: $md) {
@@ -664,11 +668,12 @@
   &__title {
     display: flex;
     align-items: flex-end;
-    padding-top: 15px;
+    padding-top: 9px;
     font-size: 36px;
     line-height: 41px;
     font-weight: 400;
     @media (max-width: $xxxl) {
+      //letter-spacing: normal;
       font-size: 19px;
       line-height: 24px;
     }
@@ -737,6 +742,10 @@
       max-width: 100%;
       .job-filter__grid-wrap--list & {
         margin: 0;
+        max-width: 160px;
+        @media (max-width: $xxxl) {
+          max-width: 100%;
+        }
         @media (max-width: $md) {
           margin-left: auto;
         }
@@ -744,8 +753,12 @@
     }
   }
   &__text {
-    margin-bottom: 28px;
+    margin-bottom: 21px;
     line-height: (45/32);
+    letter-spacing: .3px;
+    @media (max-width: $xxxl) {
+      letter-spacing: normal;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -758,7 +771,7 @@
   }
   &__department {
     display: none;
-    width: 18%;
+    width: 19.5%;
     align-items: center;
     .job-filter__grid-wrap--list & {
       display: flex;
@@ -777,7 +790,7 @@
     .job-filter__grid-wrap--list & {
       margin-top: 0;
       padding-right: 40px;
-      width: 16%;
+      width: 17%;
       min-height: unset;
       overflow: hidden;
       @media (max-width: $md) {
@@ -855,10 +868,11 @@
     }
     &--list-view {
       display: none;
-      width: 26%;
+      width: 22%;
       margin: 0;
       align-items: center;
       padding-right: 40px;
+      padding-left: 0;
       .job-filter__grid-wrap--list & {
         display: flex;
         @media (max-width: $md) {

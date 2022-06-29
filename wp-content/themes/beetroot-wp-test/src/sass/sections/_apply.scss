@@ -1,6 +1,6 @@
 .apply {
   &__inner {
-    padding: 240px 0;
+    padding: 222px 0 239px;
     @media (max-width: $xxxl) {
       padding: 75px 0;
     }
@@ -9,7 +9,7 @@
     }
   }
   &__title {
-    margin-bottom: 95px;
+    margin-bottom: 78px;
     font-size: 90px;
     line-height: (110/90);
     font-weight: 300;
@@ -65,8 +65,8 @@
       margin: 0;
       padding: 0 0 0 38px;
       position: absolute;
-      top: calc(100% - 60px);
-      left: 320px;
+      top: calc(100% - 69px);
+      left: 325px;
       border: none;
       font-size: 30px;
       color: $color-9;
@@ -111,14 +111,19 @@
       }
     }
     input[type='submit']{
-      width: 260px;
+      font-size: 35px;
+      padding: 36px 51px;
+      @media (max-width: $xxxl) {
+        font-size: 16px;
+        padding: 12px 22px;
+      }
     }
     label {
       position: relative;
     }
   }
   &__row {
-    margin-bottom: 55px;
+    margin-bottom: 37px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -128,8 +133,18 @@
     @media (max-width: $md) {
       margin-bottom: 20px;
     }
+    &:nth-child(2n){
+      @media (min-width: $xxxl) {
+        margin-bottom: 84px;
+      }
+    }
+    &:nth-child(2n){
+      @media (min-width: $xxxl) {
+        margin-bottom: 84px;
+      }
+    }
     &--files {
-      margin-bottom: 89px;
+      margin-bottom: 85px;
       @media (max-width: $xxxl) {
         margin-bottom: 30px;
       }
@@ -138,11 +153,14 @@
       }
     }
     &--checkboxes {
+      @media (min-width: $xxxl) {
+        margin-bottom: 59px;
+      }
       @media (max-width: $md) {
         margin-bottom: 40px;
       }
       .apply-form__col {
-        margin-bottom: 48px;
+        margin-bottom: 37px;
         @media (max-width: $xxxl) {
           margin-bottom: 20px;
         }
@@ -164,9 +182,9 @@
       width: 100%;
     }
     &--2 {
-      width: calc(50% - 114px);
+      width: calc(50% - 36px);
       @media (max-width: $xxxl) {
-        width: calc(50% - 40px);
+        width: calc(50% - 20px);
       }
       @media (max-width: $md){
         width: calc(100%);
@@ -192,7 +210,7 @@
     position: absolute;
     left: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% + 5px));
     font-size: 34px;
     transition: transform .3s ease-in-out, opacity .3s ease-in-out;
     @media (max-width: $xxxl) {
@@ -232,7 +250,7 @@
   }
   &__file-title {
     font-size: 34px;
-    margin-right: 59px;
+    margin-right: 66px;
     @media (max-width: $xxxl) {
       font-size: 17px;
       margin-right: 25px;
