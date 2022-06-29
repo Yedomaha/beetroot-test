@@ -6,8 +6,12 @@ export default () => {
         let dropDownBtn = item.querySelector('[data-dropdown-btn]');
         dropDownBtn.addEventListener('click', () => {
             if (window.innerWidth <= 1399) {
-                closeActive();
-                item.classList.toggle('active');
+                if(item.classList.contains('active')){
+                    item.classList.remove('active');
+                } else{
+                    closeActive();
+                    item.classList.add('active');
+                }
             }
         });
     });

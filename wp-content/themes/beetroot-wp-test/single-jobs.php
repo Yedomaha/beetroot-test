@@ -50,25 +50,41 @@ if($job_type === '1'){
 				<?php endif; ?>
 
 
-				<?php if ( $job_technologies ): ?>
+	            <?php if ( $job_technologies && count( $job_technologies ) > 0 ): ?>
 
                     <ul class="job-hero__technologies-list tags">
 
 						<?php foreach ( $job_technologies as $item ): ?>
 							<?php
 							$item_icon    = get_field( 'icon', $item );
+							$icon_svg_code = get_field( 'icon_svg_code', $item );
 							$item_icon_id = beetrootTestClass::get_img_id_from_arr( $item_icon );
 							?>
-							<?php if ( $item_icon_id ): ?>
 
-                                <li class="tags__item">
-                                    <div class="tags__info">
-                                        <span class="tags__info-text"><?php echo $item->name ?></span>
-                                        <div class="tags__info-arrow"></div>
-                                    </div>
-                                    <img <?php echo beetrootTestClass::get_image_attributes_by_id( $item_icon_id, 300 ); ?> class="tags__img">
-                                </li>
+							<?php if ( $i < 3 ): ?>
+								<?php if ( ! empty( $icon_svg_code ) ): $i ++ ?>
 
+                                    <li class="tags__item">
+                                        <div class="tags__info">
+                                            <span class="tags__info-text"><?php echo $item->name ?></span>
+                                            <div class="tags__info-arrow"></div>
+                                        </div>
+										<?php echo $icon_svg_code ?>
+                                    </li>
+
+
+								<?php elseif ( $item_icon_id ): $i ++ ?>
+
+
+                                    <li class="tags__item">
+                                        <div class="tags__info">
+                                            <span class="tags__info-text"><?php echo $item->name ?></span>
+                                            <div class="tags__info-arrow"></div>
+                                        </div>
+                                        <img <?php echo beetrootTestClass::get_image_attributes_by_id( $item_icon_id, 300 ); ?> class="tags__img">
+                                    </li>
+
+								<?php endif; ?>
 							<?php endif; ?>
 
 						<?php endforeach; ?>

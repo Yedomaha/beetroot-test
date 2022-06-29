@@ -5,7 +5,7 @@ export default () => {
     langSwitchers.forEach((item) => {
         item.addEventListener('click', () => {
             if (window.innerWidth <= 1399) {
-                closeActive();
+                // closeActive();
                 item.classList.toggle('active');
             }
         });
